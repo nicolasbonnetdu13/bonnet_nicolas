@@ -1,0 +1,55 @@
+<% @user = User.find(post.user_id) %>
+<article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-<%= post.post_type %> sticky hentry">
+	<header class="entry-header">
+		<h1 class="entry-title">
+			<%= link_to post do %>
+				<%= post.title %>
+			<% end %>
+		</h1>
+		<div class="entry-meta">
+			<span class="post-date"><a title="1:25 am" rel="bookmark"><%= post.created_at.to_s(:short) %></a></span><span class="byline">
+			<span class="author"><a class="url fn n" title="Author" rel="author"> <%= @user.username %> </a></span></span>
+			<div class="comments-link">
+				<a id="comment-link-<%= post.id %>" title="Comment about <%= post.title %>" onclick="showHideComment($('#comment-post-<%= post.id %>'))" >
+					 <%= post.comments.count %>  Comments
+				</a>
+			</div>
+
+		</div>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>
+			<%= post.description %>
+		</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer entry-meta">
+
+		<span class="tags-links clear"> 
+			<% post.tag_list.each do |tag| %>
+				
+   				 <%= link_to tag, tagged_blog_posts_path(tag) %>
+   				 
+ 			<% end %>
+			<!-- 
+			<a href="http://fictivedemo.wordpress.com/tag/announcement/" rel="tag">announcement</a>
+			<a href="http://fictivedemo.wordpress.com/tag/panache/" rel="tag">panache</a> 
+			-->
+		</span>
+		
+		<% if can? :delete, post %>
+			<div class="entry-meta">
+					<span class="edit-link">
+						<%= link_to 'Edit', edit_post_path(post) %>
+					</span>
+					<span class="destroy-link">
+						<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+					</span>
+			</div>
+		<% end %>
+		
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<!-- <div id="add_subject" style="display:none;"> TOTO </div> -->

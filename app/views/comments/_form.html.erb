@@ -1,0 +1,28 @@
+<% if can? :create, comment %>
+	<%= simple_form_for comment do |f| %>
+	  <% if comment.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+	
+	      <ul>
+	      <% comment.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	
+	    <%= f.input :comment, placeholder: 'Write a comment', inline_label: 'Comment'%>
+	    <%= f.input :commentable_id, :as => :hidden %>
+	    <%= f.input :commentable_type, :as => :hidden %>
+		</br>
+	  	<%= f.submit 'Send comment' %>
+	    
+	<% end %>
+<% else %>
+	<% if current_user.is? :banned %>
+		<div class="advice"> You don't have the right to write a comment ! </div>
+	<% else %>
+		<div class="advice"> You have to be connected to write a comment ! </div>
+	<% end %>
+<% end %>

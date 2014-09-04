@@ -1,0 +1,9 @@
+<% @user = User.find(comment.user_id) %>
+<div class="comment">
+	<%= image_tag @user.avatar.url(:thumb) %>
+	<div class="comment-bubble bubble-float-left" >
+		<div class="text" ><%= comment.comment %></div>
+		</br>
+		<div class="date"><%= comment.created_at.to_s(:short) %></div>
+	</div>
+</div>

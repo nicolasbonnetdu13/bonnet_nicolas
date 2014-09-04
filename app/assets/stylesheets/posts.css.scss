@@ -1,0 +1,75 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.comment-bubble {
+  margin: .4em;
+  padding: 1em;
+  cursor: pointer;
+  width: calc(100% - 110px);
+  font-size: 14px;
+  background: #e1e1e1;
+  text-decoration: none;
+  color: #666666;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.comment-bubble .date{
+  bottom:-10px;
+  right: 10px;
+  width: 100%;
+  text-align: right;
+  position: relative;
+  font-size: 12px;
+}
+
+.comment-bubble .text{
+  left:9px;
+  position: relative;
+}
+
+.comment img {
+  border-radius: 50%;
+  position: relative;
+  bottom: -20px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+
+/* Bubble Float Left */
+.bubble-float-left {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.bubble-float-left:before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: calc(30px);
+  left: 0;
+  border-style: solid;
+  border-width: 15px 25px 15px 0;
+  border-color: transparent #e1e1e1 transparent transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: left;
+  transition-property: left;
+}
+.bubble-float-left:hover, .bubble-float-left:focus, .bubble-float-left:active {
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+}
+.bubble-float-left:hover:before, .bubble-float-left:focus:before, .bubble-float-left:active:before {
+  left: -20px;
+}

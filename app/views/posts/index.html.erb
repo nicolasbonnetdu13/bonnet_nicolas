@@ -1,0 +1,22 @@
+<% @posts.each do |post| %>
+
+	<div class="hentry-wrapper">
+		<%= render "posts/post_body", post: post %>
+		
+		<div id="comment-post-<%= post.id %>" style="display:none;" >
+			<%= render "comments/show", post: post %>
+			<% comment = post.comments.build %>
+    		<% post.comments.pop %>
+			<%= render 'comments/form', comment: comment %>
+		</div>
+	</div>
+
+<% end %>
+
+<br>
+
+<%= render "pagination" %>
+
+<%= link_to 'New Post', new_post_path %>
+
+<br>

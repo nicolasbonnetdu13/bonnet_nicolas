@@ -1,0 +1,11 @@
+<div class="hentry-wrapper">
+	
+<%= render "posts/post_body", post: @post %>
+
+<%= render "comments/show", post: @post %>
+	
+<%= render 'comments/form', comment: @comment %>
+
+</div>
+	
+<%= link_to 'Back', posts_path %>

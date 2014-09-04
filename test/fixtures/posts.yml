@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: "MyText in description"
+  image_url: MyString.png
+  post_type: standard 
+
+two:
+  title: MyString
+  description: "MyText in description"
+  image_url: MyString.png
+  post_type: standard 
+
+standard:
+  title: "A post standard"
+  description: "A description for a standard post"
+  image_url: ""
+  post_type: standard

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyBlog</title>
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  		<%= stylesheet_link_tag 'posts', media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+
+		<meta name="robots" content="noindex,follow">
+		<style type="text/css" id="fictive-sidebar">
+			@media only screen and (min-width: 1120px) {
+				.site-header {
+					position: fixed;
+				}
+			}
+		</style>
+		<style type="text/css" id="syntaxhighlighteranchor"></style>
+		<style>
+			#infinite-footer {
+				display: none !important;
+			}
+
+			@media screen and (max-width: 600px) {
+				.demosite-activate {
+					position: absolute;
+				}
+			}
+		</style>
+		<style>
+			html {
+				margin-top: 80px !important;
+			}
+			@media screen and (max-width: 620px) {
+				html {
+					margin-top: 100px !important;
+				}
+			}
+			@media screen and (max-width: 600px) {
+				.demosite-activate {
+					position: absolute;
+				}
+			}
+		</style>
+	</head>
+	<body class="home blog highlander-enabled highlander-light infinite-scroll neverending">
+		<div id="page" class="hfeed site">
+			<header id="masthead" class="site-header" role="banner" style="position: relative;">
+				<%= link_to posts_path do %>
+				<% image_tag("apple_iphone_drawing.jpg", size: "1112x1000", alt: "", scale: "0" , class: "header-image") %>
+				<% end %>
+				<div class="site-branding">
+					<div class="header-avatar">
+						<%= link_to posts_path do %>
+						<% image_tag("nicolas_bonnet.jpg", size: "100x100", alt: "", class: "grav-hashed") %>
+						<% end %>
+					</div>
+					<h1 class="site-title">Nicolas Bonnet</h1>
+					<h2 class="site-description">Mobile developer</h2>
+					<h3 class="site-description">
+						Current user : <%= current_user.username %>
+					</h3>
+					<div class="social-links">
+						<div class="menu-social-links-container">
+							<ul id="menu-social-links" class="menu">
+								<li id="menu-item-110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-110">
+									<a href="http://facebook.com/"><span class="screen-reader-text">Facebook</span></a>
+								</li>
+								<li id="menu-item-115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-115">
+									<a href="http://instagram.com/sixhours"><span class="screen-reader-text">Instagram</span></a>
+								</li>
+								<li id="menu-item-113" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-113">
+									<a href="http://pinterest.com/"><span class="screen-reader-text">Pinterest</span></a>
+								</li>
+								<li id="menu-item-114" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-114">
+									<a href="http://tumblr.com/"><span class="screen-reader-text">Tumblr</span></a>
+								</li>
+								<li id="menu-item-108" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108">
+									<a href="http://www.twitter.com/wordpressdotcom"><span class="screen-reader-text">Twitter</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="menu-toggles clear">
+					<h1 id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span></h1>
+					<h1 id="search-toggle" class="menu-toggle"><span class="screen-reader-text">Search</span></h1>
+				</div>
+
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<a class="skip-link screen-reader-text" href="http://fictivedemo.wordpress.com/#content">Skip to content</a>
+					<div class="menu-footer-container">
+						<ul id="menu-footer" class="menu">
+							<li id="menu-item-105" class="menu-item">
+								<a href="http://fictivedemo.wordpress.com/readability/">Readability</a>
+							</li>
+							<li id="menu-item-106" class="menu-item">
+								<a href="http://fictivedemo.wordpress.com/image-alignment-and-styles/">Image Alignment and Styles</a>
+							</li>
+							<li id="menu-item-107" class="menu-item">
+								<% if current_user.is? :guest %>
+									<%= link_to 'Login', new_user_session_path %>
+								<% else %>
+									<%= link_to 'Settings account', edit_user_registration_path %>
+									<%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
+								<% end %>
+							</li>
+						</ul>
+					</div>
+				</nav><!-- #site-navigation -->
+
+				<div id="site-search" class="header-search">
+					<form role="search" method="get" class="search-form" action="./Fictive   Making it personal at WordPress.com_files/Fictive   Making it personal at WordPress.com.html">
+						<label> <span class="screen-reader-text">Search for:</span>
+							<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+						</label>
+						<input type="submit" class="search-submit" value="Search">
+					</form>
+				</div>
+			</header><!-- #masthead -->
+
+			<div id="content" class="site-content">
+
+				<div id="primary" class="content-area">
+					<%= yield %>
+				</div><!-- #primary -->
+
+			</div><!-- #content -->
+
+			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="site-info">
+					<!--
+					<a href="http://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com</a>.
+					<span class="sep"> | </span>
+					<a href="http://theme.wordpress.com/themes/fictive/" title="Learn more about this theme">The Fictive Theme</a> by <a href="http://theme.wordpress.com/" rel="designer">WordPress.com</a>.
+					-->
+				</div><!-- .site-info -->
+			</footer><!-- #colophon -->
+		</div><!-- #page -->
+	</body>
+</html>

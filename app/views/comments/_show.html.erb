@@ -1,0 +1,7 @@
+<% post.comments.each do |comment| %>
+
+	<% if comment.comment != nil %>
+		<%= render 'comments/body', comment: comment %>
+	<% end %>
+	
+<% end %>

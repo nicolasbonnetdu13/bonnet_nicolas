@@ -1,0 +1,56 @@
+<% @posts.each do |post| %>
+<div class="hentry-wrapper">
+	<article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-<%= post.post_type %> sticky hentry">
+		<header class="entry-header">
+			<h1 class="entry-title">
+				<%= link_to post do %>
+					<%= post.title %>
+				<% end %>
+			</h1>
+			<div class="entry-meta">
+				<span class="post-date"><a href="http://fictivedemo.wordpress.com/2011/09/20/a-great-night-out/" title="1:25 am" rel="bookmark">Featured</a></span><span class="byline">
+				<span class="author vcard"><a class="url fn n" href="http://fictivedemo.wordpress.com/author/themedemos/" title="View all posts by Theme Buster" rel="author">Theme Buster</a></span></span>
+				<span class="comments-link"><a href="http://fictivedemo.wordpress.com/2011/09/20/a-great-night-out/#comments" title="Comment on A Great Night Out">2 Comments</a></span>
+
+			</div>
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<p>
+				<%= post.description %>
+			</p>
+		</div><!-- .entry-content -->
+
+		<footer class="entry-footer entry-meta">
+
+			<span class="tags-links clear"> 
+				<% post.tag_list.each do |tag| %>
+					
+					<p>
+						<%= tag %>
+					</p>
+					
+       				 <%= link_to tag, tagged_blog_posts_path(tag) %>
+     			<% end %>
+				<!-- 
+				<a href="http://fictivedemo.wordpress.com/tag/announcement/" rel="tag">announcement</a>
+				<a href="http://fictivedemo.wordpress.com/tag/panache/" rel="tag">panache</a> 
+				-->
+			</span>
+			<div class="entry-meta">
+					<span class="edit-link">
+						<%= link_to 'Edit', edit_post_path(post) %>
+					</span>
+					<span class="destroy-link">
+						<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+					</span>
+			</div>
+			
+		</footer><!-- .entry-footer -->
+	</article><!-- #post-## -->
+</div>
+<% end %>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
