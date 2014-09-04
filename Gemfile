@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem "debugger"
+end
+
 #factoring (for example user)
 gem "factory_girl", ">=4.1.0"
 
