@@ -13,7 +13,16 @@ class Post < ActiveRecord::Base
   # = Attributes =
   # ==============
   
-  attr_accessible :title, :description, :tag_list, :image_url, :post_type, :created_at, :comments, :user_id
+  attr_accessible :title, :description, :tag_list, :post_type, :created_at, :comments, :user_id, :image
+  
+  has_attached_file :image
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"] }
+  validates :image, :presence => { :message => ": It is required for this kind of post" }, if: :is_not_image?
+  
+  def is_not_image?
+     (:post_type != 'image')
+  end
   
   def short_body
     truncate(body, length: 400, separator: "\n")
@@ -23,16 +32,12 @@ class Post < ActiveRecord::Base
   # = Validations =
   # ===============
 
-  validates :title, presence: true, length: { minimum: 5, maximum: 66 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 66 }
   validates :description, presence: true, length: { minimum: 10 }
 
-  validates :image_url, allow_blank: true, format: {
-    with: %r{\.(gif|jpg|png)\Z}i,
-    message: 'must be a URL for GIF, JPG or PNG image.'
-  }
-
   validates :post_type, presence:true, format: {
-    with: %r{\A(standard|image|video|status|quote|link|gallery|aside|audio)\Z},
+    with: %r{\A(standard|image|video|status|quote|link)\Z},
+    # with: %r{\A(standard|image|video|status|quote|link|gallery|aside|audio)\Z},
     message: 'must me a type from the list'
   }
 

@@ -1,13 +1,15 @@
 MyBlog::Application.routes.draw do
   
+  resources :gallery_images
+
   root to: "posts#index"
   
   devise_for :users
   resources :posts 
+  resources :comments, :only => [:create]
   
   
   match "/posts/add_new_comment" => "posts#add_new_comment", :as => "add_new_comment_to_posts", :via => [:post]
-  resources :comments, :only => [:create]
   
   match "posts/tagged/:tag" => 'posts#tagged', :via => [:get],  :as => 'tagged_blog_posts'
   

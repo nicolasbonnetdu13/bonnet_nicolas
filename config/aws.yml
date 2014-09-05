@@ -1,0 +1,8 @@
+# Just like config/database.yml, this file requires an entry for each environment
+# http://aws.amazon.com/security-credentials
+
+development:
+  simple_db_consistent_reads: false
+
+production:
+  simple_db_consistent_reads: true

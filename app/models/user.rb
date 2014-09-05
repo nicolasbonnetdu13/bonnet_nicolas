@@ -15,11 +15,8 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "80x80#" }, :default_style => :thumb, :default_url => "default_avatar.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  # attr_accessor :login
-  # attr_accessible :login
+  validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
   
-  validates_attachment :avatar,
-  :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
   
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)

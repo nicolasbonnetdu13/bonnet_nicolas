@@ -1196,7 +1196,7 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 .main-navigation a:hover {
-  color: #DA7B42;
+  color: #bd5532;
 }
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a {
@@ -1682,14 +1682,14 @@ a .post-date:before {
   position: relative;
 }
 .tags-links a:hover {
-  background-color: #DA7B42;
+  background-color: #bd5532;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 .tags-links a:hover:after {
-  background-color: #DA7B42;
+  background-color: #bd5532;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -2543,7 +2543,7 @@ div.sharedaddy div.sd-block {
   text-decoration: none;
 }
 .social-links ul a:hover:before {
-  background: #DA7B42;
+  background: #bd5532;
   text-decoration: none;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;

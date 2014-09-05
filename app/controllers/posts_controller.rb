@@ -25,7 +25,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.new(post_params)
     authorize! :edit, @post
   end
 
@@ -82,7 +81,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-      params.require(:post).permit(:title, :description, :image_url, :post_type, :tag_list )
+      params.require(:post).permit( :title, :description, :image, :post_type, :tag_list )
   end
 
   def index

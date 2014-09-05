@@ -1,4 +1,13 @@
 <% @user = User.find(post.user_id) %>
+<% if post.post_type == "image" %>
+	<figure class="entry-thumbnail">
+			<%= link_to post do %>
+			
+				<%= image_tag post.image.url %>
+				<!-- <img width="816" height="540" src="http://fictivedemo.files.wordpress.com/2011/07/unsplash_52d5c05422a47_1.jpg?w=1268" class="attachment-fictive-index-thumb wp-post-image" alt="unsplash_52d5c05422a47_1" originalw="816" src-orig="http://fictivedemo.files.wordpress.com/2011/07/unsplash_52d5c05422a47_1.jpg?w=816" scale="2"> -->
+			<% end %>
+	</figure>
+<% end %>
 <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-<%= post.post_type %> sticky hentry">
 	<header class="entry-header">
 		<h1 class="entry-title">
@@ -38,16 +47,18 @@
 			-->
 		</span>
 		
-		<% if can? :delete, post %>
 			<div class="entry-meta">
+				<% if can? :update, post %>
 					<span class="edit-link">
 						<%= link_to 'Edit', edit_post_path(post) %>
 					</span>
+				<% end %>
+				<% if can? :delete, post %>
 					<span class="destroy-link">
 						<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 					</span>
+				<% end %>
 			</div>
-		<% end %>
 		
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

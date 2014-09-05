@@ -9,7 +9,6 @@ class PostsControllerTest < ActionController::TestCase
     @update = {
       title: 'LoremIpsum',
       description: 'Lorem Ipsum Lorem Ipsum',
-      image_url: 'lorem.jpg',
       post_type: 'standard'
     }
   end
@@ -27,7 +26,7 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     assert_difference('Post.count') do
-      post :create, post: { title: @post.title, description: @post.description, image_url: @post.image_url, post_type: @post.post_type }
+      post :create, post: { title: @post.title, description: @post.descriptionl, post_type: @post.post_type }
     end
 
     assert_redirected_to post_path(assigns(:post))
@@ -44,7 +43,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should update post" do
-    patch :update, id: @post, post: { title: @post.title, description: @post.description, image_url: @post.image_url, post_type: @post.post_type }
+    patch :update, id: @post, post: { title: @post.title, description: @post.description, post_type: @post.post_type }
     assert_redirected_to post_path(assigns(:post))
   end
 
