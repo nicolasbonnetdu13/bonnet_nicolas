@@ -13,15 +13,15 @@ class Post < ActiveRecord::Base
   # = Attributes =
   # ==============
   
-  attr_accessible :title, :description, :tag_list, :post_type, :created_at, :comments, :user_id, :image
+  attr_accessible :title, :description, :tag_list, :post_type, :created_at, :comments, :user_id, :image, :gallery_images
   
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_attachment :image, :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"] }
-  validates :image, :presence => { :message => ": It is required for this kind of post" }, if: :is_not_image?
+  validates :image, :presence => { :message => ": It is required for this kind of post" }, if: :is_image?
   
-  def is_not_image?
-     (:post_type != 'image')
+  def is_image?
+     (self.post_type == 'image')
   end
   
   def short_body
@@ -36,7 +36,7 @@ class Post < ActiveRecord::Base
   validates :description, presence: true, length: { minimum: 10 }
 
   validates :post_type, presence:true, format: {
-    with: %r{\A(standard|image|video|status|quote|link)\Z},
+    with: %r{\A(standard|image|video|status|quote|link|gallery)\Z},
     # with: %r{\A(standard|image|video|status|quote|link|gallery|aside|audio)\Z},
     message: 'must me a type from the list'
   }
@@ -55,6 +55,13 @@ class Post < ActiveRecord::Base
     scope :for_index, lambda { |page_no = 1| order("created_at DESC").page(page_no) }
     
     has_many :comments, :as => :commentable, :dependent => :destroy
+    has_many :gallery_images, :dependent => :destroy
+    
+    validates :gallery_images, :presence => { :message => ": It is required for this kind of post" }, if: :is_gallery?
+  
+    def is_gallery?
+       (self.post_type == 'gallery')
+    end
   
     def comments_ordered_by_submitted
       Comment.find_comments_for_commentable(self.class.name, id)

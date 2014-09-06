@@ -29,9 +29,21 @@
   	<% end %>
     <%= f.file_field :image %>
   </p>
+  <div class="control-group">
+    <%= f.label :gallery_images, :class => 'control-label' %>
+    <div class="controls">
+      <!-- The magic is coming ...look at my eyes....shazammmm -->
+      <!-- Use HTML5 multiple attribute to enable multiple selection
+           and pass back to controller all files as an array, ready 
+           for paperclip!!
+           file_field_tag, since images is not a gallery attribute
+       -->
+      <%= file_field_tag "gallery_images[]", type: :file, multiple: true %>
+    </div>
+  </div>
   <div class="field">
     <%= f.label :post_type %>
-    <%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Status','status'],['Quote','quote'],['Link','link']] %>
+    <%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Status','status'],['Quote','quote'],['Link','link'],['Gallery','gallery']] %>
   </div>
   <div class="field">
       <%= f.label :tags , "Libellé 1, Libellé 2 ..."%>

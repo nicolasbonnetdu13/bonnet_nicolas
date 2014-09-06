@@ -8,6 +8,36 @@
 			<% end %>
 	</figure>
 <% end %>
+<% if post.post_type == "gallery" %>
+	<figure class="entry-thumbnail">
+		<%= link_to post do %>
+			<div id="owl-demo-<%= post.id %>" class="owl-carousel owl-theme">
+				<% post.gallery_images.each do |gallery_image| %>
+					<% if gallery_image.image != nil %>
+						<div class="item"><%= image_tag gallery_image.image.url %></div>
+					<% end %>
+				<% end %>
+			</div>
+			<script>
+				$(document).ready(function() {
+				  $("#owl-demo-<%= post.id %>").owlCarousel({
+				 	  autoPlay: 2500,
+				      navigation : false, // Show next and prev buttons
+				      slideSpeed : 300,
+				      paginationSpeed : 400,
+				      lazyLoad : true,
+				      singleItem:true
+				  });
+				});
+			</script>
+		<% end %>
+	</figure>
+<% end %>
+<% if post.post_type == "video" %>
+	<figure class="entry-thumbnail">
+		<iframe id="player" type="text/html" width="100%" height="400" src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&controls=0"></iframe>
+	</figure>
+<% end %>
 <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-<%= post.post_type %> sticky hentry">
 	<header class="entry-header">
 		<h1 class="entry-title">
