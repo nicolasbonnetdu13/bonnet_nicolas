@@ -10,32 +10,40 @@
 <% end %>
 <% if post.post_type == "gallery" %>
 	<figure class="entry-thumbnail">
-		<%= link_to post do %>
-			<div id="owl-demo-<%= post.id %>" class="owl-carousel owl-theme">
-				<% post.gallery_images.each do |gallery_image| %>
-					<% if gallery_image.image != nil %>
-						<div class="item"><%= image_tag gallery_image.image.url %></div>
+		<div id="wowslider-container1">
+			<div class="ws_images">
+				<ul>
+					<% post.gallery_images.each_with_index do |gallery_image, index| %>
+						<% if gallery_image.image != nil %>
+							<li>
+								<img src="<%= gallery_image.image.url %>" alt="<%= gallery_image.image.name %>" title="<%= gallery_image.image.name %>" id="wows1_<%= index %>"/>
+							</li>
+						<% end %>
 					<% end %>
-				<% end %>
+				</ul>
 			</div>
-			<script>
-				$(document).ready(function() {
-				  $("#owl-demo-<%= post.id %>").owlCarousel({
-				 	  autoPlay: 2500,
-				      navigation : false, // Show next and prev buttons
-				      slideSpeed : 300,
-				      paginationSpeed : 400,
-				      lazyLoad : true,
-				      singleItem:true
-				  });
-				});
-			</script>
-		<% end %>
+			<div class="ws_bullets">
+				<div>
+					<% post.gallery_images.each_with_index do |gallery_image, index| %>
+						<% if gallery_image.image != nil %>
+							<a href="#" title="<%= gallery_image.image.name %>">
+								<%= image_tag gallery_image.image.url %>
+								<%= index+1 %>
+							</a>
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="ws_shadow"></div>
+		</div>	
+		<%= javascript_include_tag "wowslider" %>
+		<%= javascript_include_tag "script_slider" %>
 	</figure>
 <% end %>
 <% if post.post_type == "video" %>
 	<figure class="entry-thumbnail">
-		<iframe id="player" type="text/html" width="100%" height="400" src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&controls=0"></iframe>
+		<iframe id="player" type="text/html" width="100%" height="400" src="http://www.youtube.com/embed/<%= post.video_url %>?enablejsapi=1&controls=0"></iframe>
 	</figure>
 <% end %>
 <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-<%= post.post_type %> sticky hentry">

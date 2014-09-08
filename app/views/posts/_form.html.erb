@@ -19,6 +19,10 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+    <%= f.label :post_type %>
+    <%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Status','status'],['Quote','quote'],['Link','link'],['Gallery','gallery']] %>
+  </div>
   <p>
     <%= f.label :image %>
     <% if @post.image.url.present? %>
@@ -42,8 +46,8 @@
     </div>
   </div>
   <div class="field">
-    <%= f.label :post_type %>
-    <%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Status','status'],['Quote','quote'],['Link','link'],['Gallery','gallery']] %>
+    <%= f.label :video_url %><br>
+    <%= f.text_field :video_url %>
   </div>
   <div class="field">
       <%= f.label :tags , "Libellé 1, Libellé 2 ..."%>

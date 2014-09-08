@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905141357) do
+ActiveRecord::Schema.define(version: 20140906144253) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140905141357) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "video_url"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

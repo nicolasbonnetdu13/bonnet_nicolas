@@ -35,6 +35,19 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     authorize! :create, @post
     
+    if ( post_params[:post_type] == "video" )
+      query_string = URI.parse(post_params[:video_url]).query
+      parameters = Hash[URI.decode_www_form(query_string)]
+      @post.video_url = parameters['v'] # => aNdMiIAlK0g
+      if ( @post.video_url.nil? )
+        respond_to do |format|
+          format.html { render action: 'new' }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+    
+
     respond_to do |format|
       if @post.save
         if params[:gallery_images]
@@ -88,7 +101,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-      params.require(:post).permit( :title, :description, :image, :post_type, :tag_list, :gallery_images )
+      params.require(:post).permit( :title, :description, :image, :post_type, :tag_list, :gallery_images, :video_url )
   end
 
   def index
