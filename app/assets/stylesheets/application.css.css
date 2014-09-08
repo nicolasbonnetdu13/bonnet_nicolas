@@ -53,6 +53,10 @@ table, caption, tbody, tfoot, thead, tr, th, td, th {
   vertical-align: baseline;
 }
 
+h1 {
+	text-align: center;
+}
+
 html {
   font-size: 62.5%;
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
@@ -1468,6 +1472,7 @@ a:hover, a:focus, a:active {
   margin: 0 auto;
   opacity: 0.8;
 }
+
 @media screen and (max-width: 65em) {
   .entry-thumbnail img {
     opacity: 1;

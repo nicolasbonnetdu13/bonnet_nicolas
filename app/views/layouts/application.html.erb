@@ -4,6 +4,7 @@
 		<title>MyBlog</title>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   		<%= stylesheet_link_tag 'posts', media: "all", "data-turbolinks-track" => true %>
+		<%= stylesheet_link_tag "device", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "owl.carousel" %>
 		<%= javascript_include_tag "jquery_slider" %>
@@ -12,41 +13,6 @@
 		<%= stylesheet_link_tag "owl.theme" %>
 		<%= csrf_meta_tags %>
 
-		<meta name="robots" content="noindex,follow">
-		<style type="text/css" id="fictive-sidebar">
-			@media only screen and (min-width: 1120px) {
-				.site-header {
-					position: fixed;
-				}
-			}
-		</style>
-		<style type="text/css" id="syntaxhighlighteranchor"></style>
-		<style>
-			#infinite-footer {
-				display: none !important;
-			}
-
-			@media screen and (max-width: 600px) {
-				.demosite-activate {
-					position: absolute;
-				}
-			}
-		</style>
-		<style>
-			html {
-				margin-top: 80px !important;
-			}
-			@media screen and (max-width: 620px) {
-				html {
-					margin-top: 100px !important;
-				}
-			}
-			@media screen and (max-width: 600px) {
-				.demosite-activate {
-					position: absolute;
-				}
-			}
-		</style>
 	</head>
 	<body class="home blog highlander-enabled highlander-light infinite-scroll neverending">
 		<div id="page" class="hfeed site">

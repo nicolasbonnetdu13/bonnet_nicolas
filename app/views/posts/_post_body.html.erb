@@ -9,7 +9,7 @@
 	</figure>
 <% end %>
 <% if post.post_type == "gallery" %>
-	<figure class="entry-thumbnail">
+	<figure class="entry-thumbnail" style="background-color:#ffffff;margin:auto">
 		<div id="wowslider-container1">
 			<div class="ws_images">
 				<ul>
@@ -27,7 +27,6 @@
 					<% post.gallery_images.each_with_index do |gallery_image, index| %>
 						<% if gallery_image.image != nil %>
 							<a href="#" title="<%= gallery_image.image.name %>">
-								<%= image_tag gallery_image.image.url %>
 								<%= index+1 %>
 							</a>
 						<% end %>

@@ -11,18 +11,18 @@
 	      </ul>
 	    </div>
 	  <% end %>
-	
-	    <%= f.input :comment, placeholder: 'Write a comment', inline_label: 'Comment'%>
-	    <%= f.input :commentable_id, :as => :hidden %>
-	    <%= f.input :commentable_type, :as => :hidden %>
-		</br>
-	  	<%= f.submit 'Send comment' %>
+		<div class="comment_container" >
+		    <%= f.input :comment, placeholder: 'Write a comment', inline_label: 'Comment'%>
+		    <%= f.input :commentable_id, :as => :hidden %>
+		    <%= f.input :commentable_type, :as => :hidden %>
+		  	<%= f.submit 'Send comment' %>
+	  	</div>
 	    
 	<% end %>
 <% else %>
 	<% if current_user.is? :banned %>
-		<div class="advice"> You don't have the right to write a comment ! </div>
+		<div class="error_right"> You don't have the right to write a comment ! </div>
 	<% else %>
-		<div class="advice"> You have to be connected to write a comment ! </div>
+		<div class="error_right"> You have to be connected to write a comment ! </div>
 	<% end %>
 <% end %>

@@ -1,60 +1,70 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :post_type %>
-    <%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Status','status'],['Quote','quote'],['Link','link'],['Gallery','gallery']] %>
-  </div>
-  <p>
-    <%= f.label :image %>
-    <% if @post.image.url.present? %>
-		<div class="entry-thumbnail">
-			<%= image_tag @post.image.url %>
-		</div> 
-		</br>
-  	<% end %>
-    <%= f.file_field :image %>
-  </p>
-  <div class="control-group">
-    <%= f.label :gallery_images, :class => 'control-label' %>
-    <div class="controls">
-      <!-- The magic is coming ...look at my eyes....shazammmm -->
-      <!-- Use HTML5 multiple attribute to enable multiple selection
-           and pass back to controller all files as an array, ready 
-           for paperclip!!
-           file_field_tag, since images is not a gallery attribute
-       -->
-      <%= file_field_tag "gallery_images[]", type: :file, multiple: true %>
-    </div>
-  </div>
-  <div class="field">
-    <%= f.label :video_url %><br>
-    <%= f.text_field :video_url %>
-  </div>
-  <div class="field">
-      <%= f.label :tags , "Libellé 1, Libellé 2 ..."%>
-      <%= f.text_field :tag_list %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="advice">
+	<%= form_for(@post) do |f| %>
+		<% if @post.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+			
+				<ul>
+					<% @post.errors.full_messages.each do |msg| %>
+						<li>
+							<%= msg %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		
+		<div class="field">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+		<div class="field">
+			<%= f.label :description %>
+			<%= f.text_area :description %>
+		</div>
+		<div class="field">
+			<%= f.label :post_type %>
+			<%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Status','status'],['Quote','quote'],['Gallery','gallery']], {},
+			 :onChange => "postTypeChange(this)" %>
+		</div>
+		<div id="post_image">
+			<div class="field">
+				<%= f.label :image %>
+				<%= f.file_field :image, :onChange => "displayImageContainer(this)" %>
+			</div>
+			<div class="entry-thumbnail", id="image_container", style="display:none;">
+				<%= image_tag @post.image.url, :id => "image_display" %>
+			</div>
+			<br>
+		</div>
+		<div id="post_gallery">
+			<div class="control-group">
+				<div class="field">
+					<%= f.label :gallery_images, :class => 'control-label' %>
+					<div class="controls">
+						<%= file_field_tag "gallery_images[]", type: :file, multiple: true %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="post_video">
+			<div class="field">
+				<%= f.label :video_url %>
+				<%= f.text_field :video_url %>
+			</div>
+		</div>
+		
+		<script type="text/javascript">hideEveryType(false);</script>
+		
+		<div class="field">
+			<%= f.label :tags, "Tags" %>
+			<%= f.text_field :tag_list %>
+			<span class="hint"> (Libellé 1, Libellé 2 ...)</span>
+		</div>
+		
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
