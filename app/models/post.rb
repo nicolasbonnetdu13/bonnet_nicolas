@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
   validates :description, presence: true, length: { minimum: 10 }
 
   validates :post_type, presence:true, format: {
-    with: %r{\A(standard|image|video|status|quote|link|gallery)\Z},
+    with: %r{\A(standard|image|video|status|quote|link|gallery|wolf)\Z},
     # with: %r{\A(standard|image|video|status|quote|link|gallery|aside|audio)\Z},
     message: 'must me a type from the list'
   }
