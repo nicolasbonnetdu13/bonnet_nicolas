@@ -15,6 +15,19 @@
 
 	</head>
 	<body class="home blog highlander-enabled highlander-light infinite-scroll neverending">
+		<div class="account-container">
+			
+			
+			<% if current_user.is? :guest %>
+				<span>Current user : <%= current_user.username %></span>
+				<%= link_to 'Login', new_user_session_path, class: "link", style: "top: 8px;" %>
+			<% else %>
+				<%= image_tag current_user.avatar.url(:thumb) %>
+				<span id="span-logged"><%= current_user.username %></span>
+				<%= link_to 'Settings', edit_user_registration_path, class: "link" %>
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link"  %>
+			<% end %>
+		</div>
 		<div id="page" class="hfeed site">
 			<header id="masthead" class="site-header" role="banner" style="position: relative;">
 				<%= link_to posts_path do %>
@@ -28,9 +41,7 @@
 					</div>
 					<h1 class="site-title">Nicolas Bonnet</h1>
 					<h2 class="site-description">Mobile developer</h2>
-					<h3 class="site-description">
-						Current user : <%= current_user.username %>
-					</h3>
+					
 					<div class="social-links">
 						<div class="menu-social-links-container">
 							<ul id="menu-social-links" class="menu">
@@ -68,14 +79,6 @@
 							</li>
 							<li id="menu-item-106" class="menu-item">
 								<a href="http://fictivedemo.wordpress.com/image-alignment-and-styles/">Image Alignment and Styles</a>
-							</li>
-							<li id="menu-item-107" class="menu-item">
-								<% if current_user.is? :guest %>
-									<%= link_to 'Login', new_user_session_path %>
-								<% else %>
-									<%= link_to 'Settings account', edit_user_registration_path %>
-									<%= link_to 'Logout', destroy_user_session_path, method: :delete  %>
-								<% end %>
 							</li>
 						</ul>
 					</div>

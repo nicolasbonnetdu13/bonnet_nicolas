@@ -45,10 +45,10 @@
 }
 
 .comment-bubble {
+    display: table-cell; 
   margin: .4em;
   padding: 1em;
-  cursor: pointer;
-  width: calc(100% - 110px);
+  width: 100%;
   font-size: 14px;
   background: #e1e1e1;
   text-decoration: none;
@@ -70,15 +70,22 @@
   position: relative;
 }
 
-.comment img {
-  height: 80px;
+.comment {
+    display:table;
+    width: 100%;
+}
+
+.comment .image-bubble {
+    display: table-cell; 
+  height: 70px;
   width: 80px;
+  padding-right: 10px;
 }
 
 .comment img {
   border-radius: 50%;
   position: relative;
-  bottom: -20px;
+  bottom: -15px;
   min-width: 100%;
   min-height: 100%;
   z-index: 2;

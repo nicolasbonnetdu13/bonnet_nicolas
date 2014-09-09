@@ -1,6 +1,6 @@
 <% @user = User.find(comment.user_id) %>
 <div class="comment">
-	<div class="image"> 
+	<div class="image-bubble"> 
 		<%= image_tag @user.avatar.url(:thumb) %>
 	</div>
 	<div class="comment-bubble bubble-float-left" >

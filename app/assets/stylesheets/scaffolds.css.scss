@@ -28,10 +28,11 @@ textarea {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: #FA5858;
+  padding: 4px;
+  background-color: #f28686;
+  display: inherit;
   color: white;
-  display: table;
+  width: inherit;
 }
 
 input[type="submit"]{
@@ -42,23 +43,25 @@ input[type="submit"]{
 
 #error_explanation {
   width: 450px;
-  border: 2px solid #FA5858;
-  padding: 7px;
+  border: 4px solid #f28686;
+  padding: 10px;
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  width: 100%;
+  
   h2 {
     text-align: left;
-    font-weight: bold;
+    font-family: sans-serif;
     padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #FA5858;
+    font-size: 15px;
+    margin: -10px;
+    margin-bottom: 10px;
+    background-color: #f28686;
     color: #fff;
   }
   ul li {
-    font-size: 12px;
+    font-size: 14px;
     list-style: square;
   }
 }

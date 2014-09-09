@@ -12,11 +12,13 @@ class CommentsController < ApplicationController
       @comment.user_id = current_user.id;
       authorize! :create, @comment
       
-      if @comment.save
-        redirect_to show_page_url, :notice => "Thanks for the comment."
-      else
-        flash.now[:alert] = "You had some errors for your comment."  # edited 10/28/10 use 'flash.now' instead of 'flash'
-        render_error_page
+      respond_to do |format|
+        if @comment.save
+          format.html { redirect_to show_page_url, :notice => "Thanks for the comment." }
+        else
+          flash.now[:alert] = "You had some errors for your comment."  # edited 10/28/10 use 'flash.now' instead of 'flash'
+          format.html { render_error_page }
+        end
       end
     else
       redirect_to root_url, :alert => "You can't do that."
