@@ -13,6 +13,7 @@
 
 function showHideComment(element) {
     element.toggle('fast'); 
+    element.css("overflow", "inherit");
 }
 
 var oldValue;

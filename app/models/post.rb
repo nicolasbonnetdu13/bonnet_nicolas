@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
   validates :description, presence: true, length: { minimum: 10 }
 
   validates :post_type, presence:true, format: {
-    with: %r{\A(standard|image|video|status|quote|link|gallery|wolf)\Z},
+    with: %r{\A(standard|image|video|status|quote|link|gallery|crew)\Z},
     # with: %r{\A(standard|image|video|status|quote|link|gallery|aside|audio)\Z},
     message: 'must me a type from the list'
   }
@@ -59,30 +59,30 @@ class Post < ActiveRecord::Base
   # ===============
 
 
-    # =================
-    # = Assosciations =
-    # =================
+  # =================
+  # = Assosciations =
+  # =================
 
-    # ==========
-    # = Scopes =
-    # ==========
+  # ==========
+  # = Scopes =
+  # ==========
 
-    # Returns the blog posts paginated for the index page
-    # @scope class
-    def comments_ordered_by_submitted
-      Comment.find_comments_for_commentable(self.class.name, id)
-    end
-    
-    def add_comment(comment)
-      comments << comment
-    end
-    
-    def self.find_comments_for(obj)
-      Comment.find_comments_for_commentable(self.to_s, obj.id)
-    end
-    
-    def self.find_comments_by_user(user)
-      Comment.where(["user_id = ? and commentable_type = ?", user.id, self.to_s]).order("created_at DESC")
+  # Returns the blog posts paginated for the index page
+  # @scope class
+  def comments_ordered_by_submitted
+    Comment.find_comments_for_commentable(self.class.name, id)
+  end
+  
+  def add_comment(comment)
+    comments << comment
+  end
+  
+  def self.find_comments_for(obj)
+    Comment.find_comments_for_commentable(self.to_s, obj.id)
+  end
+  
+  def self.find_comments_by_user(user)
+    Comment.where(["user_id = ? and commentable_type = ?", user.id, self.to_s]).order("created_at DESC")
     end
 
 end
