@@ -59,18 +59,14 @@ gem 'whenever', :require => false
 gem "paperclip", "~> 4.2"
 gem 'rack-ssl-enforcer'
 
-gem 'aws-sdk', '~> 1.11.3'
-gem 'opsworks', '~> 0.0.16'
-gem 'therubyracer'
+gem 'aws-sdk' 
 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-gem 'unicorn'
-gem "unicorn-rails"
-
+# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

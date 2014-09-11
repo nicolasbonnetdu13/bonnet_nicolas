@@ -2,10 +2,7 @@
 # http://aws.amazon.com/security-credentials
 
 development:
-  region: eu-west-1
-  
-test:
-  region: eu-west-1
+  simple_db_consistent_reads: false
 
 production:
-  region: eu-west-1
+  simple_db_consistent_reads: true

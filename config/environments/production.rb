@@ -80,6 +80,5 @@ MyBlog::Application.configure do
   
   
   config.middleware.use Rack::SslEnforcer, :only => '/users'
-  config.middleware.use Rack::SslEnforcer, :except_agents => 'Googlebot'
   
 end

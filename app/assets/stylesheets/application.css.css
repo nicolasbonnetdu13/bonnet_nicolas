@@ -1501,7 +1501,7 @@ a:hover, a:focus, a:active {
 }
 
 
-.hentry.format-crew:before {
+.hentry.format-wolf:before {
   background: #6aa23a;
 	background: -moz-linear-gradient(left, #6aa23a 0%, #42a648 100%);
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#6aa23a), color-stop(100%,#42a648));
@@ -1512,7 +1512,7 @@ a:hover, a:focus, a:active {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6aa23a', endColorstr='#42a648',GradientType=1 );
   content: url(wolf_emblem.svg);
 }
-.hentry.format-crew:after {
+.hentry.format-wolf:after {
   -webkit-border-image: -webkit-gradient(linear, left top, right top, from(#ff920a), to(#32A84D), color-stop(0.6, #32A84D)) 1;
 }
 

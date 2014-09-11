@@ -3,18 +3,17 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource
 
+  # GET /posts
+  # GET /posts.json
+  def index
+    authorize! :index, Post
+    @posts = Post.all
+  end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-    if @post.nil?
-      redirect_to action: :index
-    end
-    if @post.post_type == "crew"
-      if current_user.is? :normal or current_user.is? :banned or current_user.is? :guest 
-        redirect_to action: :index
-      end 
-    end
     @comment = @post.comments.build
     @post.comments.pop
   end
@@ -106,21 +105,15 @@ class PostsController < ApplicationController
   end
 
   def index
-    authorize! :index, Post
-    if current_user.is? :admin or current_user.is? :crew 
-      @posts = Post.all
-    else 
-      @posts = Post.where.not(["post_type = ?", "crew"])
-    end
     respond_to do |format|
       format.xml {
-        @posts = @posts.order('created_at DESC')
+        @posts = Post.order('created_at DESC')
       }
       format.html {
-        @posts = @posts.for_index(params[:page])
+        @posts = Post.for_index(params[:page])
       }
       format.rss {
-        @posts = @posts.order('created_at DESC')
+        @posts = Post.order('created_at DESC')
       }
     end
   end

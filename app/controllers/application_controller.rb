@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   
   before_action :configure_permitted_parameters, if: :devise_controller?
   
-  
   protected
 
   def configure_permitted_parameters
@@ -27,7 +26,7 @@ class ApplicationController < ActionController::Base
   def guest_user
     
     begin
-      @user = User.find(session[:guest_user_id].nil? ? session[:guest_user_id] = 1 : session[:guest_user_id])
+      @user = User.find(session[:guest_user_id].nil? ? session[:guest_user_id] = create_guest_user.id : session[:guest_user_id])
     rescue
       @user = User.find(session[:guest_user_id] = create_guest_user.id)
     ensure
@@ -37,9 +36,9 @@ class ApplicationController < ActionController::Base
   end
   
   def create_guest_user
-      u = User.create(:username => "guest", :roles => ["guest"])
-      u.save(:validate => false)
-      u
+    u = User.create(:username => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@example.com", :roles => ["guest"])
+    u.save(:validate => false)
+    u
   end
     
 end

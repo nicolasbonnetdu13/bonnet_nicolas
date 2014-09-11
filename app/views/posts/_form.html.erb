@@ -26,10 +26,10 @@
 		<div class="field">
 			<%= f.label :post_type %>
 			<% if current_user.is? :admin %>
-				<%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Gallery','gallery'],['La meute','crew'],['Status','status'],['Quote','quote']], {},
+				<%= f.select :post_type , [['Normal','standard'],['Image','image'],['Video','video'],['Gallery','gallery'],['La meute','wolf'],['Status','status'],['Quote','quote']], {},
 			 :onChange => "postTypeChange(this)" %>
 			 <% else %>
-			 	<%= f.select :post_type , [['La meute','crew']] %>
+			 	<%= f.select :post_type , [['La meute','wolf']] %>
 			 <% end %>
 		</div>
 		<div id="post_image">
