@@ -21,8 +21,4 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: d24brcb98n9d8d
-  host: ec2-54-217-239-20.eu-west-1.compute.amazonaws.com
-  username: ehhlkcvwpmtidb
-  port: 5432
-  password: 29H07OlXb37O5Spt1oYgwtU-Ji
+  database: bonnet-nicolas
