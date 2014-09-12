@@ -13,11 +13,20 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
+<<<<<<< HEAD
 development:
   adapter: postgresql
   host: localhost
   username: user
   database: app-dev
+=======
+  adapter: postgresql
+  host: ec2-174-129-21-42.compute-1.amazonaws.com
+  username: zrfvyxpocgdhsq
+  password: LlyL2wQooWWnflCRJM2GqFfju4
+  port: 5432
+  database: d9k67h6j6dfpfl
+>>>>>>> 2816f548a66635396ca2f4de616a535973cc1209
 
 production:
   adapter: sqlite3
