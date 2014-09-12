@@ -26,9 +26,9 @@ module MyBlog
     
     
   config.serve_static_assets = true
-  config.assets.enable = true
-  
-  config.assets.version = "1.0"
+  # config.assets.enable = true
+#   
+  # config.assets.version = "1.0"
     
     
   end
