@@ -73,8 +73,8 @@ gem 'rack-ssl-enforcer'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-gem 'unicorn'
-gem "unicorn-rails"
+# gem 'unicorn'
+# gem "unicorn-rails"
 
 
 # Use Capistrano for deployment
