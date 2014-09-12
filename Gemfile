@@ -59,9 +59,9 @@ gem 'whenever', :require => false
 gem "paperclip", "~> 4.2"
 gem 'rack-ssl-enforcer'
 
-gem 'aws-sdk', '~> 1.11.3'
-gem 'opsworks', '~> 0.0.16'
-gem 'therubyracer'
+# gem 'aws-sdk', '~> 1.11.3'
+# gem 'opsworks', '~> 0.0.16'
+# gem 'therubyracer'
 
 
 # Use ActiveModel has_secure_password
