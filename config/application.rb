@@ -25,6 +25,7 @@ module MyBlog
     # config.i18n.default_locale = :de
     
     
+  config.serve_static_assets = true
   config.assets.enable = true
   
   config.assets.version = "1.0"
