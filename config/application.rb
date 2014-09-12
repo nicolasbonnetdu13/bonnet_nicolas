@@ -25,7 +25,10 @@ module MyBlog
     # config.i18n.default_locale = :de
     
     
+  config.cache_classes = true
   config.serve_static_assets = true
+  config.assets.compile = true
+  config.assets.digest = true
   # config.assets.enable = true
 #   
   # config.assets.version = "1.0"
