@@ -1,0 +1,143 @@
+/* line 5, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.entry-thumbnail {
+  background: white;
+  max-height: 440px;
+  width: 100%;
+  border: 1px solid #e4e1dc;
+  border-radius: 2px;
+}
+
+/* line 13, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.hentry-wrapper article {
+  z-index: 100;
+}
+
+/* line 17, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.entry-thumbnail a {
+  vertical-align: middle;
+}
+
+/* line 21, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.entry-thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 26, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+#owl-demo .item {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  vertical-align: middle;
+}
+
+/* line 33, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment_container textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+}
+
+/* line 39, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment_container input[type="submit"] {
+  text-align: center;
+  width: 200px;
+  margin-left: calc(50% - 100px);
+  margin-right: calc(50% - 100px);
+  margin-top: -20px;
+}
+
+/* line 47, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment-bubble {
+  display: table-cell;
+  margin: .4em;
+  padding: 1em;
+  width: 100%;
+  font-size: 14px;
+  background: #e1e1e1;
+  text-decoration: none;
+  color: #666666;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* line 59, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment-bubble .date {
+  bottom: -10px;
+  right: 10px;
+  width: 100%;
+  text-align: right;
+  position: relative;
+  font-size: 12px;
+}
+
+/* line 68, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment-bubble .text {
+  left: 9px;
+  position: relative;
+}
+
+/* line 73, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment {
+  display: table;
+  width: 100%;
+}
+
+/* line 78, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment .image-bubble {
+  display: table-cell;
+  height: 70px;
+  width: 80px;
+  padding-right: 10px;
+}
+
+/* line 85, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.comment img {
+  border-radius: 50%;
+  position: relative;
+  bottom: -15px;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 2;
+}
+
+/* Bubble Float Left */
+/* line 95, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.bubble-float-left {
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+/* line 108, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.bubble-float-left:before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: calc(30px);
+  left: 0;
+  border-style: solid;
+  border-width: 15px 25px 15px 0;
+  border-color: transparent #e1e1e1 transparent transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: left;
+  transition-property: left;
+}
+
+/* line 122, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.bubble-float-left:hover, .bubble-float-left:focus, .bubble-float-left:active {
+  -webkit-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* line 126, /Users/bonnetnicolas/Documents/Aptana Studio 3 Workspace/myBlog/app/assets/stylesheets/posts.css.scss */
+.bubble-float-left:hover:before, .bubble-float-left:focus:before, .bubble-float-left:active:before {
+  left: -20px;
+}
