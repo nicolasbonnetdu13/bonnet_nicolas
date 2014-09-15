@@ -23,8 +23,12 @@ textarea {
     height: 100px;
 }
 
-#notice {
-  color: #04B45F;
+.flash-notice {
+  background-color: #63c389;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
 }
 
 .field_with_errors {

@@ -2,18 +2,17 @@
 <html>
 	<head>
 		<% set_meta_tags :title => 'Nicolas Bonnet',
-              :description => 'This website has been made to show what I am doing and what I can do!',
+              :description => 'This website has been made with Ruby on Rails to show what I am doing and what I can do!',
               :keywords => 'Nicolas Bonnet, developer, mobile developer, ios developer, ruby on rails, blog' %>
 		<%= display_meta_tags :separator => "&mdash;".html_safe %>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "jquery_slider" %>
+		<%= csrf_meta_tags %>
 
 	</head>
 	<body class="home blog highlander-enabled highlander-light infinite-scroll neverending">
 		<div class="account-container">
-			
-			
 			<% if current_user.is? :guest %>
 				<span>Current user : <%= current_user.username %></span>
 				<%= link_to 'Login', new_user_session_path, class: "link", style: "top: 8px;" %>
