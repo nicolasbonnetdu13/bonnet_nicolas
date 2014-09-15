@@ -47,11 +47,11 @@
 <% end %>
 <article id="post-<%= post.id %>" class="post-<%= post.id %> post type-post status-publish format-<%= post.post_type %> sticky hentry">
 	<header class="entry-header">
-		<h1 class="entry-title">
+		<h2 class="entry-title">
 			<%= link_to post do %>
 				<%= post.title %>
 			<% end %>
-		</h1>
+		</h2>
 		<div class="entry-meta">
 			<span class="post-date"><a title="1:25 am" rel="bookmark"><%= post.created_at.to_s(:short) %></a></span><span class="byline">
 			<span class="author"><a class="url fn n" title="Author" rel="author"> <%= @user.username %> </a></span></span>

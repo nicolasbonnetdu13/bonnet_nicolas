@@ -18,6 +18,53 @@
   vertical-align: middle;
 }
 
+.back-button a{
+  
+  background: url('back_button.png') no-repeat;
+  background-position-y: 9px;
+  background-position-x: 12px;
+  color: #9b8d76;
+  background-color: #efedea;
+  border: 2px solid #9b8d76;
+  padding: 15px 30px 15px 50px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0px;
+}
+
+.back-button a:hover {
+  background: url('back_button_hover.png') no-repeat;
+  background-position-y: 9px;
+  background-position-x: 12px;
+  border-radius: 15px;
+  color: #c2beb7;
+}
+
+// .back-button a:before {
+//   
+  // -webkit-transition: all 0.3s ease-in-out;
+  // -moz-transition: all 0.3s ease-in-out;
+  // -o-transition: all 0.3s ease-in-out;
+  // transition: all 0.3s ease-in-out;
+  // content: url('back_button.png');
+  // width: 30px;
+  // height: 30px;
+  // position: relative;
+  // top: 9px;
+  // right: 12px;
+// }
+// 
+// .back-button a:hover:before {
+  // content: url('back_button_hover.png');
+  // width: 30px;
+  // height: 30px;
+  // position: relative;
+  // top: 9px;
+  // right: 12px;
+// }
+
 .entry-thumbnail img {
   max-width: 100%;
   max-height: 100%;

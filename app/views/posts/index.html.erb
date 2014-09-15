@@ -16,10 +16,12 @@
 
 <% end %>
 
-<br>
-
-<%= render "pagination" %>
-
-<%= link_to 'New Post', new_post_path %>
+<div class='pagination-container'>
+	<%= render "pagination" %>
+	
+	<br />
+	
+	<%= button_to 'New Post', new_post_path, :method => :get, :style => 'margin-left: 0px;'  %>
+</div>
 
 <br>

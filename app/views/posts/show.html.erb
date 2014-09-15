@@ -3,12 +3,11 @@
 
 <div class="hentry-wrapper">
 	
-<%= render "posts/post_body", post: @post %>
-
-<%= render "comments/show", post: @post %>
-	
-<%= render 'comments/form', comment: @comment %>
-
+	<%= render "posts/post_body", post: @post %>
+	<div class="comment-post-<%= @post.id %>">
+		<%= render "comments/show", post: @post %>
+		<%= render 'comments/form', comment: @comment %>
+	</div>
 </div>
 	
-<%= link_to 'Back', posts_path %>
+<div class="back-button"><%= link_to 'Back', posts_path %></div>

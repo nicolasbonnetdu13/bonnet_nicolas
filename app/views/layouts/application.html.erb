@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>MyBlog</title>
+		<% set_meta_tags :title => 'Nicolas Bonnet',
+              :description => 'This website has been made to show what I am doing and what I can do!',
+              :keywords => 'Nicolas Bonnet, developer, mobile developer, ios developer, ruby on rails, blog' %>
+		<%= display_meta_tags :separator => "&mdash;".html_safe %>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  		<%= stylesheet_link_tag 'posts', media: "all", "data-turbolinks-track" => true %>
-		<%= stylesheet_link_tag "device", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-		<%= javascript_include_tag "owl.carousel" %>
 		<%= javascript_include_tag "jquery_slider" %>
-		<%= stylesheet_link_tag "style_slider" %>
-		<%= stylesheet_link_tag "owl.carousel" %>
-		<%= stylesheet_link_tag "owl.theme" %>
-		<%= csrf_meta_tags %>
 
 	</head>
 	<body class="home blog highlander-enabled highlander-light infinite-scroll neverending">
@@ -39,8 +35,8 @@
 						<% image_tag("nicolas_bonnet.jpg", size: "100x100", alt: "", class: "grav-hashed") %>
 						<% end %>
 					</div>
-					<h1 class="site-title">Nicolas Bonnet</h1>
-					<h2 class="site-description">Mobile developer</h2>
+					<h2 class="site-title">Nicolas Bonnet</h2>
+					<h3 class="site-description">Mobile developer</h3>
 					
 					<div class="social-links">
 						<div class="menu-social-links-container">
@@ -66,8 +62,8 @@
 				</div>
 
 				<div class="menu-toggles clear">
-					<h1 id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span></h1>
-					<h1 id="search-toggle" class="menu-toggle"><span class="screen-reader-text">Search</span></h1>
+					<h2 id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span></h2>
+					<h2 id="search-toggle" class="menu-toggle"><span class="screen-reader-text">Search</span></h2>
 				</div>
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">

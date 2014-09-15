@@ -1,0 +1,123 @@
+.first a{
+  background: url('page_index2.png') no-repeat 0px 0px;
+  width: 60px;
+  height: 46px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  float: left;
+}
+
+.first a:hover{
+  background: url('page_index2.png') no-repeat 0px -46px;
+}
+
+.last a{
+  background: url('page_index2.png') no-repeat -180px 0px;
+  width: 60px;
+  height: 46px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  float: left;
+}
+
+.last a:hover{
+  background: url('page_index2.png') no-repeat -180px -46px;
+}
+
+.next a {
+  background: url('page_index2.png') no-repeat -120px 0px;
+  width: 60px;
+  height: 46px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  float: left;
+}
+
+.next a:hover{
+  background: url('page_index2.png') no-repeat -120px -46px;
+}
+
+.prev a{
+  background: url('page_index2.png') no-repeat -60px 0px;
+  width: 60px;
+  height: 46px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  float: left;
+}
+
+.prev a:hover {
+  background: url('page_index2.png') no-repeat -60px -46px;
+}
+
+.page a{
+  width: 30px;
+  height: 46px;
+  vertical-align: middle;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  float: left;
+  vertical-align: middle;
+}
+
+.page-current{
+  width: 30px;
+  height: 46px;
+  vertical-align: middle;
+  display: block;
+  position: relative;
+  float: left;
+  padding-top: 13px;
+  text-align: center;
+  color: #9b8d76;
+  font-size: 40px;
+}
+
+.page-gap{
+  width: 30px;
+  height: 46px;
+  vertical-align: middle;
+  display: block;
+  position: relative;
+  float: left;
+  padding-top: 13px;
+  text-align: center;
+  color: #9b8d76;
+  font-size: 40px;
+}
+
+.pagination {
+  height: 46px;
+  width: inherit;
+}
+
+.pagination a {
+  padding-top: 13px;
+  text-align: center;
+  color: #9b8d76;
+  font-size: 40px;
+  
+  -webkit-transition: all 0.0s ease-in-out;
+  -moz-transition: all 0.0s ease-in-out;
+  -o-transition: all 0.0s ease-in-out;
+  transition: all 0.0s ease-in-out;
+}
+
+.pagination a:hover {
+  color: #c2beb7;
+  
+  -webkit-transition: all 0.0s ease-in-out;
+  -moz-transition: all 0.0s ease-in-out;
+  -o-transition: all 0.0s ease-in-out;
+  transition: all 0.0 s ease-in-out;
+}
+
+.pagination-container {
+  position: relative;
+  margin-top: -30px;
+}
