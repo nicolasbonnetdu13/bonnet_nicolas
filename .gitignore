@@ -16,3 +16,5 @@
 /tmp
 .elasticbeanstalk/
 /public/system/
+
+*.DS_Store

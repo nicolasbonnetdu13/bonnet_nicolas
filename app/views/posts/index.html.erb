@@ -1,6 +1,12 @@
 <h1>Posts</h1>
+
+  <% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
+  
 <br />
 <br />
+  
 <% @posts.each do |post| %>
 
 	<div class="hentry-wrapper">
