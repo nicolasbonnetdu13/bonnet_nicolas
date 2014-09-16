@@ -25,6 +25,17 @@ class CommentsController < ApplicationController
     end
   end
   
+  def destroy
+    @comment = Comment.find(params[:id])
+    @commentable = Comment.find_commentable(@comment.commentable_type, @comment.commentable_id)
+    authorize! :destroy, @comment
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to show_page_url, :notice => "The comment has been deleted."}
+      format.json { head :no_content }
+    end
+  end
+  
   private
   
   def show_page_url

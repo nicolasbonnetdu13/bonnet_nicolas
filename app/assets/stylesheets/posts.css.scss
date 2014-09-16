@@ -42,6 +42,42 @@
   color: #c2beb7;
 }
 
+.back-button a:active {
+  -webkit-animation-name: push;
+  animation-name: push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+@-webkit-keyframes push {
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes push {
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
 // .back-button a:before {
 //   
   // -webkit-transition: all 0.3s ease-in-out;
@@ -92,7 +128,7 @@
 }
 
 .comment-bubble {
-    display: table-cell; 
+  display: table-cell; 
   margin: .4em;
   padding: 1em;
   width: 100%;
@@ -105,6 +141,7 @@
 
 .comment-bubble .date{
   bottom:-10px;
+  margin-top: -10px;
   right: 10px;
   width: 100%;
   text-align: right;
@@ -115,26 +152,60 @@
 .comment-bubble .text{
   left:9px;
   position: relative;
+  font-size: 16px;
 }
+
+.comment-bubble .name{
+  left:9px;
+  position: relative;
+  font-size: 14px;
+  color: #808080;
+  font-weight: bold;
+}
+
 
 .comment {
     display:table;
     width: 100%;
 }
 
+.comments-delete a:before {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Genericons";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  content: "\f405";
+}
+
+.comments-delete a {
+  top: 11px;
+  position: relative;
+  color: #9b8d76;
+  width: 100%;
+  height: 100%;
+}
+
+.comments-delete a:hover {
+  color: #c2beb7;
+}
+
 .comment .image-bubble {
-    display: table-cell; 
-  height: 70px;
+  display: table-cell; 
+  height: 100%;
   width: 80px;
   padding-right: 10px;
+  position: relative;
+  bottom: 0px;
 }
 
 .comment img {
   border-radius: 50%;
   position: relative;
   bottom: -15px;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 70px;
+  min-height: 70px;
   z-index: 2;
 }
 

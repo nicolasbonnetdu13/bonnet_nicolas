@@ -11,10 +11,10 @@ class Ability
       can :read, Post
       can :create, Post
       can :manage, Post, :user_id => user.id
-      can :manage, Comment
+      can :manage, Comment, :user_id => user.id
     elsif user.is? :normal
       can :read, Post
-      can :manage, Comment
+      can :manage, Comment, :user_id => user.id
     else 
       can :read, Post
       can :read, Comment

@@ -17,17 +17,28 @@
 	    <%= f.input :username, required: false %>
 		
 		<div class="field">
-		    <%= f.label :avatar %>
-		    <%= f.file_field :avatar, :onchange => "readURL(this)" %>
+		    <%= f.label :avatar, :style => "vertical-align: top;" %>
+		    <div class="image-editor">
+		      <%= f.file_field :avatar, :class => "cropit-image-input" %>
+		      <div class="cropit-image-preview"></div>
+			      
+				<%= javascript_include_tag "jquery.cropit" %>
+			    <script>
+			        $('.image-editor').cropit({
+			          imageState: {
+			            src: '<%= escape_javascript(@user.avatar.url(:thumb)) %>'
+			          }
+			        });
+			    </script>
+		    
+		    </div>
 	    </div>
-		<div style="height: 100px; width: 100px; margin-left: 100px"> 
-			<%= image_tag @user.avatar.url(:thumb), :id => "image_display", :style => "min-height: 100%; min-width: 100%; border-radius: 50%;" %> 
-		</div>
 		<br />
 	    
 	    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
 	  </div>
-	
+		
+	    
 	  <div class="form-actions">
 	    <%= f.button :submit, "Update" %>
 	  </div>
@@ -38,6 +49,6 @@
 <br />
 <div class="advice">
 	<h2>Cancel my account</h2>
-	<p>Unhappy?    <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+	<p>Unhappy?   <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </div>
 

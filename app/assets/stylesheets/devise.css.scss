@@ -12,3 +12,24 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+
+.cropit-image-preview {
+  background-color: #f8f8f8;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: 7px;
+  width: 80px;
+  height: 80px;
+  cursor: move;
+}
+
+.cropit-image-background {
+  opacity: .2;
+  cursor: auto;
+}
+
+.image-size-label {
+  margin-top: 0.6rem;
+}
+    

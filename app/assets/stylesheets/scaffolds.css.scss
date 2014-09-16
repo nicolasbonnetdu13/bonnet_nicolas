@@ -31,6 +31,14 @@ textarea {
   position: relative;
 }
 
+.flash-alert {
+  background-color: #f28686;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+}
+
 .field_with_errors {
   padding: 4px;
   background-color: #f28686;

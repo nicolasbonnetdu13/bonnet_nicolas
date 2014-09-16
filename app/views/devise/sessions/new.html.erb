@@ -1,18 +1,12 @@
 <h1>Sign in</h1>
 
 <div class="advice">
-	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	  <%= f.error_notification %>
 	  <div class="form-inputs">
 	  	
-		<div class="field">
-			<%= f.label :email %>
-			<%= f.text_field :email, autofocus: true %>
-		</div>
-		
-		<div class="field">
-			<%= f.label :password %>
-			<%= f.password_field :password %>
-		</div>
+	    <%= f.input :email, required: true, autofocus: true %>
+	    <%= f.input :password, required: true %>
 		
 		<div class="field">
 			<%= f.label :remember_me, style: "width: 150px;" %>

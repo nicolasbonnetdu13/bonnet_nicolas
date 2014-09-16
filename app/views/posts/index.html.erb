@@ -3,6 +3,9 @@
   <% if flash[:notice] %>
     <p class="flash-notice"><%= flash[:notice] %></p>
   <% end %>
+<% if flash[:alert] %>
+	<p class="flash-alert"><%= flash[:alert] %></p>
+<% end %>
   
 <br />
 <br />
@@ -26,8 +29,9 @@
 	<%= render "pagination" %>
 	
 	<br />
-	
-	<%= button_to 'New Post', new_post_path, :method => :get, :style => 'margin-left: 0px;'  %>
+	<% if can? :create, Post %>
+		<%= button_to 'New Post', new_post_path, :method => :get, :style => 'margin-left: 0px;'  %>
+	<% end %>
 </div>
 
 <br>

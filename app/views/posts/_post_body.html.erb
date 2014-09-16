@@ -2,9 +2,7 @@
 <% if post.post_type == "image" %>
 	<figure class="entry-thumbnail">
 			<%= link_to post do %>
-			
 				<%= image_tag post.image.url %>
-				<!-- <img width="816" height="540" src="http://fictivedemo.files.wordpress.com/2011/07/unsplash_52d5c05422a47_1.jpg?w=1268" class="attachment-fictive-index-thumb wp-post-image" alt="unsplash_52d5c05422a47_1" originalw="816" src-orig="http://fictivedemo.files.wordpress.com/2011/07/unsplash_52d5c05422a47_1.jpg?w=816" scale="2"> -->
 			<% end %>
 	</figure>
 <% end %>
@@ -78,10 +76,6 @@
    				 <%= link_to tag, tagged_blog_posts_path(tag) %>
    				 
  			<% end %>
-			<!-- 
-			<a href="http://fictivedemo.wordpress.com/tag/announcement/" rel="tag">announcement</a>
-			<a href="http://fictivedemo.wordpress.com/tag/panache/" rel="tag">panache</a> 
-			-->
 		</span>
 		
 			<div class="entry-meta">
@@ -100,4 +94,3 @@
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
-<!-- <div id="add_subject" style="display:none;"> TOTO </div> -->

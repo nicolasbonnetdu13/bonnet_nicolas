@@ -1,11 +1,16 @@
 <% @user = User.find(comment.user_id) %>
 <div class="comment">
+	<% if can? :destroy, comment %>
+		<span class="comments-delete" style="position: absolute;">
+			<%= link_to "", comment , method: :delete, data: { confirm: 'Are you sure?' } %>
+		</span>
+	<% end %>
 	<div class="image-bubble"> 
 		<%= image_tag @user.avatar.url(:medium) %>
 	</div>
 	<div class="comment-bubble bubble-float-left" >
-		<div class="text" ><%= comment.comment %></div>
-		</br>
+		<div class="name"><%= @user.username %> said :</div>
+		<div class="text"><%= simple_format(comment.comment) %></div>
 		<div class="date"><%= comment.created_at.to_s(:short) %></div>
 	</div>
 </div>
