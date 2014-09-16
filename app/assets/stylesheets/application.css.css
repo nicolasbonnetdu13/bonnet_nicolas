@@ -11,29 +11,7 @@
  *= require_self
  *= require_tree .
  */
-/* Theme Name: Fictive
- * Theme URI: http://theme.wordpress.com/themes/fictive
- * Author: Automattic
- * Author URI: http://automattic.com
- * Description: Fictive is all about you -- your style, your look, your story. Make it personal with a custom header image, a Gravatar, and links to your favorite social networks. Use Post Formats to dress up your content, add a custom menu and widgets, or keep it simple with a fixed-position header.
- * Version: 1.0
- * License: GNU General Public License v2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: fictive
- * Domain Path: /languages/
- * Tags: brown, orange, blue, red, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
- *
- * This theme, like WordPress, is licensed under the GPL.
- * Use it to make something cool, have fun, and share what you've learned with others.
- *
- * Fictive is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
- *
- * Resetting and rebuilding styles have been helped along thanks to the fine work of
- * Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
- * along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
- * and Blueprint http://www.blueprintcss.org/ */
-/* =Reset
--------------------------------------------------------------- */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -403,6 +381,7 @@ img {
 	background: #697b8b;
 	padding-left: 30px;
 	padding-right: 40px;
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.7); 
 }
 
 .account-container span {
@@ -1063,6 +1042,7 @@ a:hover, a:focus, a:active {
 .site-content {
   float: right;
   width: 66%;
+  max-width: 800px;
   margin: 72px auto 0;
 }
 @media screen and (max-width: 65em) {
@@ -1104,7 +1084,7 @@ a:hover, a:focus, a:active {
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 24px auto 0;
+  margin: 0 0 0 38%;
   padding: 48px 0;
   text-align: center;
 }
@@ -1114,7 +1094,7 @@ a:hover, a:focus, a:active {
 }
 @media screen and (max-width: 51em) {
   .site-footer {
-    margin: 0 auto;
+  	margin: 0 0 0 0;
     padding: 24px;
   }
 }
@@ -1136,6 +1116,7 @@ a:hover, a:focus, a:active {
   margin-left:-5%;
   position: relative;
   width: 35%;
+  max-width: 400px;
   z-index: 1;
 }
 
