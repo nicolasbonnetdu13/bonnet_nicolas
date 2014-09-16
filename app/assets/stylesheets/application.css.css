@@ -1956,6 +1956,9 @@ object {
 .social-links ul a[href*="linkedin.com"]:before {
   content: "\f207";
 }
+.social-links ul a[href*="stackoverflow.com/"]:before {
+  content: url('stackoverflow.svg');
+}
 .social-links ul a[href*="/feed"]:before {
   content: "\f413";
 }
