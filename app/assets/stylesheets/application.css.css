@@ -1958,6 +1958,13 @@ object {
 }
 .social-links ul a[href*="stackoverflow.com/"]:before {
   content: url('stackoverflow.svg');
+  height: 36px;
+  width: 36px;
+}
+.social-links ul a[href*="viadeo.com/"]:before {
+  content: url('viadeo.svg');
+  height: 36px;
+  width: 36px;
 }
 .social-links ul a[href*="/feed"]:before {
   content: "\f413";
