@@ -71,7 +71,6 @@
     };
     Cropit = function() {
         function Cropit(element, options) {
-        	alert('totot');
             var dynamicDefaults;
             this.element = element;
             this.$el = $(this.element);
