@@ -15,24 +15,20 @@
 	    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
 	    <%= f.input :password_confirmation, required: false %>
 	    <%= f.input :username, required: false %>
-		
+					      
+
 		<div class="field">
 		    <%= f.label :avatar, :style => "vertical-align: top;" %>
 		    <div class="image-editor">
 		      <%= f.file_field :avatar, :class => "cropit-image-input" %>
 		      <div class="cropit-image-preview"></div>
-			      
-				<%= javascript_include_tag "jquery.cropit" %>
-			    <script>
-			        $('.image-editor').cropit({
-			          imageState: {
-			            src: '<%= escape_javascript(@user.avatar.url(:thumb)) %>'
-			          }
-			        });
-			    </script>
 		    
 		    </div>
 	    </div>
+		<%= javascript_include_tag "jquery.cropit" %>
+	    <script type="text/javascript">
+	          loadCropit('<%= escape_javascript(@user.avatar.url(:thumb)) %>');
+	    </script>
 		<br />
 	    
 	    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>

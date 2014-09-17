@@ -6,8 +6,7 @@
               :keywords => 'Nicolas Bonnet, developer, mobile developer, ios developer, web developer, ruby on rails, blog' %>
 		<%= display_meta_tags :separator => "&mdash;".html_safe %>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-		<%= javascript_include_tag "jquery_slider" %>
+		<%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
 
 	</head>
@@ -20,74 +19,77 @@
 				<%= image_tag current_user.avatar.url(:thumb) %>
 				<span id="span-logged"><%= current_user.username %></span>
 				<%= link_to 'Settings', edit_user_registration_path, class: "link" %>
-				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link"  %>
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link" %>
 			<% end %>
 		</div>
+		
 		<div id="page" class="hfeed site">
-			<header id="masthead" class="site-header" role="banner" style="position: relative;">
-				<%= link_to posts_path do %>
-				<% image_tag("apple_iphone_drawing.jpg", size: "1112x1000", alt: "", scale: "0" , class: "header-image") %>
-				<% end %>
-				<div class="site-branding">
-					<div class="header-avatar">
-						<%= link_to posts_path do %>
-						<% image_tag("nicolas_bonnet.jpg", size: "100x100", alt: "", class: "grav-hashed") %>
-						<% end %>
+			<% cache do %>
+				<header id="masthead" class="site-header" role="banner" style="position: relative;">
+					<%= link_to posts_path do %>
+					<% image_tag("apple_iphone_drawing.jpg", size: "1112x1000", alt: "", scale: "0" , class: "header-image") %>
+					<% end %>
+					<div class="site-branding">
+						<div class="header-avatar">
+							<%= link_to posts_path do %>
+							<% image_tag("nicolas_bonnet.jpg", size: "100x100", alt: "", class: "grav-hashed") %>
+							<% end %>
+						</div>
+						<h2 class="site-title">Nicolas Bonnet</h2>
+						<h3 class="site-description">Mobile developer</h3>
+						
+						<div class="social-links">
+							<div class="menu-social-links-container">
+								<ul id="menu-social-links" class="menu">
+									<li class="menu-item menu-item-type-custom menu-item-object-custom">
+										<a href="http://www.linkedin.com/profile/view?id=294506454" target="_blank"><span class="screen-reader-text">Linkedin</span></a>
+									</li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom">
+										<a href="http://www.viadeo.com/profile/0021lywt5vqkq3vt/" target="_blank"><span class="screen-reader-text">Viadeo</span></a>
+									</li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom">
+										<a href="https://github.com/nicolasbonnetdu13" target="_blank"><span class="screen-reader-text">Github</span></a>
+									</li>
+									<li class="menu-item menu-item-type-custom menu-item-object-custom">
+										<a href="http://stackoverflow.com/users/3319153/nicolas-bonnet" target="_blank"><span class="screen-reader-text">Stackoverflow</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<h2 class="site-title">Nicolas Bonnet</h2>
-					<h3 class="site-description">Mobile developer</h3>
-					
-					<div class="social-links">
-						<div class="menu-social-links-container">
-							<ul id="menu-social-links" class="menu">
-								<li class="menu-item menu-item-type-custom menu-item-object-custom">
-									<a href="http://www.linkedin.com/profile/view?id=294506454" target="_blank"><span class="screen-reader-text">Linkedin</span></a>
+	
+					<div class="menu-toggles clear">
+						<h2 id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span></h2>
+						<h2 id="search-toggle" class="menu-toggle"><span class="screen-reader-text">Search</span></h2>
+					</div>
+	
+					<nav id="site-navigation" class="main-navigation" role="navigation">
+						<a class="skip-link screen-reader-text">Skip to content</a>
+						<div class="menu-footer-container">
+							<ul id="menu-footer" class="menu">
+								<li class="menu-item">
+									<a href="">My projects</a>
 								</li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom">
-									<a href="http://www.viadeo.com/profile/0021lywt5vqkq3vt/" target="_blank"><span class="screen-reader-text">Viadeo</span></a>
+								<li class="menu-item">
+									<a href="">About this website</a>
 								</li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom">
-									<a href="https://github.com/nicolasbonnetdu13" target="_blank"><span class="screen-reader-text">Github</span></a>
-								</li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom">
-									<a href="http://stackoverflow.com/users/3319153/nicolas-bonnet" target="_blank"><span class="screen-reader-text">Stackoverflow</span></a>
+								<li class="menu-item">
+									<a href="">About me</a>
 								</li>
 							</ul>
 						</div>
+					</nav><!-- #site-navigation -->
+	
+					<div id="site-search" class="header-search">
+						<form role="search" method="get" class="search-form">
+							<label> <span class="screen-reader-text">Search for:</span>
+								<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
+							</label>
+							<input type="submit" class="search-submit" value="Search">
+						</form>
 					</div>
-				</div>
-
-				<div class="menu-toggles clear">
-					<h2 id="menu-toggle" class="menu-toggle"><span class="screen-reader-text">Menu</span></h2>
-					<h2 id="search-toggle" class="menu-toggle"><span class="screen-reader-text">Search</span></h2>
-				</div>
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<a class="skip-link screen-reader-text">Skip to content</a>
-					<div class="menu-footer-container">
-						<ul id="menu-footer" class="menu">
-							<li class="menu-item">
-								<a href="">My projects</a>
-							</li>
-							<li class="menu-item">
-								<a href="">About this website</a>
-							</li>
-							<li class="menu-item">
-								<a href="">About me</a>
-							</li>
-						</ul>
-					</div>
-				</nav><!-- #site-navigation -->
-
-				<div id="site-search" class="header-search">
-					<form role="search" method="get" class="search-form">
-						<label> <span class="screen-reader-text">Search for:</span>
-							<input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:">
-						</label>
-						<input type="submit" class="search-submit" value="Search">
-					</form>
-				</div>
-			</header><!-- #masthead -->
+				</header><!-- #masthead -->
+			<% end %>
 
 			<div id="content" class="site-content">
 

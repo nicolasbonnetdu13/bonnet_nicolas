@@ -71,6 +71,7 @@
     };
     Cropit = function() {
         function Cropit(element, options) {
+        	alert('totot');
             var dynamicDefaults;
             this.element = element;
             this.$el = $(this.element);
@@ -78,7 +79,7 @@
                 $fileInput: this.$("input.cropit-image-input"),
                 $preview: this.$(".cropit-image-preview"),
                 $imageZoomInput: this.$("input.cropit-image-zoom-input"),
-                $previewContainer: this.$(".cropit-image-preview-container")
+                $previewContainer: this.$(".cropit-image-preview")
             };
             this.options = $.extend({}, defaults, dynamicDefaults, options);
             this._defaults = defaults;
@@ -258,7 +259,7 @@
         };
         Cropit.prototype.setOffset = function(position) {
             this.offset = this.fixOffset(position);
-            this.$preview.css("background-position", "50% " + this.offset.y + "px");
+            this.$preview.css("background-position", "50% 50%");
             if (this.options.imageBackground) {
                 return this.$imageBg.css({
                     left: this.offset.x + this.options.imageBackgroundBorderWidth,

@@ -2,7 +2,7 @@
 # http://aws.amazon.com/security-credentials
 
 development:
-  region: eu-west-1
+  host: localhost
   
 test:
   region: eu-west-1
