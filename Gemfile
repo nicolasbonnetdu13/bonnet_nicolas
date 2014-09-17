@@ -65,6 +65,9 @@ gem "paperclip", "~> 4.2"
 gem 'rack-ssl-enforcer'
 
 gem 'meta-tags'
+gem 'aws-sdk'
+gem 's3'
+gem 'aws-s3'
 
 # gem 'aws-sdk', '~> 1.11.3'
 # gem 'opsworks', '~> 0.0.16'

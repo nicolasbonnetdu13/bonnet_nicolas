@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :roles, :roles_mask, :avatar
   
-  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "80x80#" }, :default_style => :thumb, :default_url => "default_avatar.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "80x80#" }, :default_style => :thumb, :default_url => "default_avatar.png", 
+                    :storage => :s3
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
   
