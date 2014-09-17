@@ -128,6 +128,7 @@ class PostsController < ApplicationController
   def tagged
     if params[:tag].present? 
       @posts = Post.for_index(params[:page]).tagged_with(params[:tag])
+      @tag = params[:tag]
     else 
       @posts = Post.for_index(params[:page]).postall
     end  

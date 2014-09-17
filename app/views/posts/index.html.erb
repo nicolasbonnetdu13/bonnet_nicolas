@@ -1,4 +1,4 @@
-<h1>Posts</h1>
+<h1><%= @posts.count>1 ? 'Posts' : 'Post' %> <%= @tag.nil? ? '' : ' about '+ @tag %></h1>
 
   <% if flash[:notice] %>
     <p class="flash-notice"><%= flash[:notice] %></p>
