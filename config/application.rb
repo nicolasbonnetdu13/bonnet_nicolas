@@ -16,7 +16,7 @@ module MyBlog
   config.assets.initialize_on_precompile = false  
   
   
-  config.assets.css_compressor = :yui
+  # config.assets.css_compressor = :yui
   config.assets.js_compressor = :uglify
   
     # Settings in config/environments/* take precedence over those specified here.
