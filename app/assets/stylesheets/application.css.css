@@ -1128,6 +1128,7 @@ a:hover, a:focus, a:active {
 @media screen and (max-width: 65em) {
   .site-header {
     width: 14.79em;
+  	max-width: 100%;
   }
 }
 @media screen and (max-width: 51em) {
