@@ -2,7 +2,13 @@
 
 <div class="advice">
 	<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-	  <%= f.error_notification %>
+	  
+	  <% if flash[:notice] %>
+	    <p class="flash-notice"><%= flash[:notice] %></p>
+	  <% end %>
+	<% if flash[:alert] %>
+		<p class="flash-alert"><%= flash[:alert] %></p>
+	<% end %>
 	
 	  <div class="form-inputs">
 	    <%= f.input :email, required: true, autofocus: true %>
