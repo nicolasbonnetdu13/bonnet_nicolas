@@ -79,7 +79,8 @@ MyBlog::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   
-  config.middleware.insert_before ActionDispatch::Static, Rack::SslEnforcer, :only => '/users', :strict => true
+  # config.middleware.use Rack::SslEnforcer, :only => '/users'
+  
   # config.middleware.use Rack::SslEnforcer, :except_agents => 'Googlebot'
   
   config.paperclip_defaults = {
