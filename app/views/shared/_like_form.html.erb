@@ -1,6 +1,6 @@
 <% if can? :create, Comment %>
 
-		<div id="like_form">
+		<div class="like_form <%= likeable.class.to_s() %>">
 			<% if current_user.likes?(likeable) %>
 				<%= render 'shared/unlike', likeable: likeable %>
 			<% else %>
