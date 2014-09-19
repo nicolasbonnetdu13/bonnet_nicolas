@@ -220,8 +220,8 @@
   display: inline-block;
   position: relative;
   border-radius: 10px;
-  -webkit-transition-duration: 0.0s;
-  transition-duration: 0.0s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-transition-property: transform;
   transition-property: transform;
   -webkit-transform: translateZ(0);
@@ -238,8 +238,8 @@
   border-style: solid;
   border-width: 15px 25px 15px 0;
   border-color: transparent #e1e1e1 transparent transparent;
-  -webkit-transition-duration: 0.0s;
-  transition-duration: 0.0s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-transition-property: left;
   transition-property: left;
 }
