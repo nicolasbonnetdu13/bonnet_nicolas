@@ -176,7 +176,7 @@
   font-size: 30px;
   font-style: normal;
   font-weight: normal;
-  content: "\f405";
+  content: "\f407";
 }
 
 .comments-delete a {
@@ -254,3 +254,62 @@
 .bubble-float-left:hover:before, .bubble-float-left:focus:before, .bubble-float-left:active:before {
   left: -20px;
 }
+
+
+// like / unlike
+
+
+.like:hover:before{
+  color: #d181bb; // pink
+}
+.unlike:hover:before{
+  color: #518dc5;
+}
+
+.like{
+  content : "";
+}
+.unlike{
+  content : "";
+}
+
+.like:before{
+  position: relative;
+  top: 10px;
+  color: #ada393;
+  content : "\f461";
+  -webkit-font-smoothing: antialiased;
+  font-family: "Genericons";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+}
+.unlike:before{
+  position: relative;
+  top: 10px;
+  color: #d181bb;
+  content : "\f461";
+  -webkit-font-smoothing: antialiased;
+  font-family: "Genericons";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.like.Comment:before  {
+  top: 7px;
+  font-size: 24px;
+  color: #808080;
+}
+
+.like.Comment:hover:before  {
+  top: 7px;
+  font-size: 24px;
+  color: #d181bb;
+}
+
+.unlike.Comment:before{
+  top: 7px;
+  font-size: 24px;
+}
+

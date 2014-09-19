@@ -58,10 +58,13 @@
 					 <%= post.comments.count %>  Comments
 				</a>
 			</div>
+		    <div class="<%= post.class %>-<%= post.id %> like-link">
+				<%= render 'shared/like_form', likeable: post %>
+			</div>
 
 		</div>
 	</header><!-- .entry-header -->
-
+	
 	<div class="entry-content">
 		<p>
 			<%= simple_format(post.description) %>

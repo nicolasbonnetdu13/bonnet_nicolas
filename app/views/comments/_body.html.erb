@@ -13,5 +13,9 @@
 		<div class="name"><%= @user.username %> said :</div>
 		<div class="text"><%= simple_format(comment.comment) %></div>
 		<div class="date"><%= comment.created_at.to_s(:short) %></div>
+		
+	    <div class="<%= comment.class %>-<%= comment.id %>">
+			<%= render 'shared/like_form', likeable: comment %>
+		</div>
 	</div>
 </div>

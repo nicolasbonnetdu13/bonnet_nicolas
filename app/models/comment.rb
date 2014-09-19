@@ -1,5 +1,7 @@
 class Comment < ActiveRecord::Base
 
+  acts_as_likeable
+  
   default_scope :order => 'created_at ASC'
   scope :in_order, order('created_at ASC')
   scope :recent, order('created_at DESC')

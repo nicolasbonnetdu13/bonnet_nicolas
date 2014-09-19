@@ -8,6 +8,8 @@ MyBlog::Application.routes.draw do
   resources :posts 
   resources :comments, :only => [:create, :destroy]
   
+  match 'like' => 'users#like', :via => [:get]
+  match 'unlike' => 'users#unlike', :via => [:get]
   
   match "/posts/add_new_comment" => "posts#add_new_comment", :as => "add_new_comment_to_posts", :via => [:post]
   

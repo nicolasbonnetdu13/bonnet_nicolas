@@ -1635,6 +1635,7 @@ header #cancel-comment-reply-link:hover, header .reply:hover {
 }
 
 .comments-link,
+.like-link,
 .post-date,
 .sticky .post-date,
 .byline,
@@ -1646,6 +1647,7 @@ a .post-date {
 }
 
 .comments-link a:before,
+.like-link a:before,
 .post-date a:before,
 .sticky .post-date a:before,
 .byline a:before,

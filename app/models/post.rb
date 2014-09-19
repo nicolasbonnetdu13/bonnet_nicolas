@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 
   acts_as_taggable
   acts_as_commentable
+  acts_as_likeable
   # mount_uploader :image,:image_uploader
 
   self.paginates_per 10

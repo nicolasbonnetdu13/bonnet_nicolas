@@ -3,7 +3,8 @@ require 'role_model'
 
 class User < ActiveRecord::Base
   include RoleModel
-  
+  acts_as_liker
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
          
   ROLES = %w[admin crew normal guest banned]
@@ -13,8 +14,8 @@ class User < ActiveRecord::Base
   
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me, :roles, :roles_mask, :avatar
   
-  has_attached_file :avatar, :styles => { :thumb => "80x80#" }, :default_style => :thumb, :default_url => "/assets/default_avatar.png", 
-                    :storage => :s3
+  has_attached_file :avatar, :styles => { :thumb => "80x80#" }, :default_style => :thumb, :default_url => "/assets/default_avatar.png"
+                    
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_attachment :avatar, :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
   
