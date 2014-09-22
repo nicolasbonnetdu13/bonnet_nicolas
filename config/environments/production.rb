@@ -91,4 +91,7 @@ MyBlog::Application.configure do
     }
   }
   
+  # replace this with your tracker code
+  GA.tracker = "UA-55028765-1"
+  
 end

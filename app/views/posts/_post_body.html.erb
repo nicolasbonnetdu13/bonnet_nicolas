@@ -7,7 +7,7 @@
 	</figure>
 <% end %>
 <% if post.post_type == "gallery" %>
-	<figure class="entry-thumbnail" style="background-color:#ffffff;margin:auto">
+	<figure class="entry-thumbnail" >
 		<div id="wowslider-container1">
 			<div class="ws_images">
 				<ul>
@@ -54,7 +54,7 @@
 			<span class="post-date"><a title="1:25 am" rel="bookmark"><%= post.created_at.to_s(:short) %></a></span>
 			<span class="byline"><span class="author"><a class="url fn n" title="Author" rel="author"> <%= @user.username %> </a></span></span>
 			<div class="comments-link">
-				<a id="comment-link-<%= post.id %>" title="Comment about <%= post.title %>" style="cursor: pointer;" onclick="showHideComment($('#comment-post-<%= post.id %>'))" >
+				<a id="comment-link-<%= post.id %>" title="Comment about <%= post.title %>" onclick="showHideComment($('#comment-post-<%= post.id %>'))" >
 					 <%= post.comments.count %>  Comments
 				</a>
 			</div>

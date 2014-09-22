@@ -2,6 +2,8 @@
 #
 # To ban all spiders from the entire site uncomment the next two lines:
 
+Sitemap: http://bonnet-nicolas.com/sitemap.xml
+
 User-agent: *
 Disallow: /
 

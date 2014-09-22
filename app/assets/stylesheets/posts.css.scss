@@ -169,6 +169,10 @@
     width: 100%;
 }
 
+.comments-link a{
+  cursor: pointer;
+}
+
 .comments-delete a:before {
   position: relative;
   -webkit-font-smoothing: antialiased;

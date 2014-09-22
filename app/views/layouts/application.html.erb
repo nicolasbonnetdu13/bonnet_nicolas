@@ -3,12 +3,13 @@
 	<head>
 		<% set_meta_tags :title => 'Nicolas Bonnet | Mobile developer',
               :description => 'This website has been made with Ruby on Rails to show what I am doing and what I can do!',
-              :keywords => 'Nicolas Bonnet, developer, mobile developer, ios developer, web developer, ruby on rails, blog' %>
+              :keywords => 'Nicolas, Bonnet, Nicolas Bonnet, developer, mobile developer, ios developer, web developer, ruby on rails, blog' %>
 		<%= display_meta_tags :separator => "&mdash;".html_safe %>
 		<%= favicon_link_tag '/assets/icon.png', type: 'image/png' %>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "jquery.cropit" %>
+		<%= analytics_init if Rails.env.production? %>
 		<%= csrf_meta_tags %>
 
 	</head>
@@ -16,7 +17,7 @@
 		<div class="account-container">
 			<% if current_user.is? :guest %>
 				<span>Current user : <%= current_user.username %></span>
-				<%= link_to 'Login', new_user_session_path, class: "link", style: "top: 8px;" %>
+				<%= link_to 'Login', new_user_session_path, class: "link", id: "login-link" %>
 			<% else %>
 				<%= image_tag current_user.avatar.url(:thumb) %>
 				<span id="span-logged"><%= current_user.username %></span>
@@ -27,14 +28,14 @@
 		
 		<div id="page" class="hfeed site">
 			<% cache do %>
-				<header id="masthead" class="site-header" role="banner" style="position: relative;">
+				<header id="masthead" class="site-header" role="banner">
 					<%= link_to posts_path do %>
-					<% image_tag("apple_iphone_drawing.jpg", size: "1112x1000", alt: "", scale: "0" , class: "header-image") %>
+					<% image_tag("apple_iphone_drawing.jpg", size: "1112x1000", alt: "background", scale: "0" , class: "header-image") %>
 					<% end %>
 					<div class="site-branding">
 						<div class="header-avatar">
 							<%= link_to posts_path do %>
-							<% image_tag("nicolas_bonnet.jpg", size: "100x100", alt: "", class: "grav-hashed") %>
+							<% image_tag("nicolas_bonnet.jpg", size: "100x100", alt: "It's me !", class: "grav-hashed") %>
 							<% end %>
 						</div>
 						<h2 class="site-title">Nicolas Bonnet</h2>

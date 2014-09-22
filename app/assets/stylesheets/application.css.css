@@ -370,6 +370,10 @@ img {
 
 /*  Account Settings */
 
+#login-link {
+	top: 8px;
+}
+
 .account-container {
 	display:inline-block;
 	position: fixed;
@@ -1533,6 +1537,11 @@ a:hover, a:focus, a:active {
 .entry-summary {
   margin-bottom: 24px;
   margin-top: 24px;
+}
+
+.entry-thumbnail{
+	background-color:#ffffff;
+	margin:auto;
 }
 
 .hentry-wrapper .entry-thumbnail {
