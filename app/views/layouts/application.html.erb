@@ -2,14 +2,23 @@
 <html>
 	<head>
 		<% set_meta_tags :title => 'Nicolas Bonnet | Mobile developer',
-              :description => 'This website has been made with Ruby on Rails to show what I am doing and what I can do!',
+              :description => 'My name is Nicolas Bonnet and I am a mobile developer. I made this website in Ruby on Rails to show what I am doing and what I can do!',
               :keywords => 'Nicolas, Bonnet, Nicolas Bonnet, developer, mobile developer, ios developer, web developer, ruby on rails, blog' %>
 		<%= display_meta_tags :separator => "&mdash;".html_safe %>
 		<%= favicon_link_tag '/assets/icon.png', type: 'image/png' %>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "jquery.cropit" %>
-		<%= analytics_init if Rails.env.production? %>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55028765-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
 		<%= csrf_meta_tags %>
 
 	</head>
