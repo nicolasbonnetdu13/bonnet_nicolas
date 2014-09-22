@@ -9,7 +9,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :commentable, :polymorphic => true
   
-  validates :comment, :presence => true
+  validates :comment, :presence => true, length: { maximum: 10000 }
 
   def self.find_comments_by_user(user)
     where(["user_id = ?", user.id]).order("created_at DESC")

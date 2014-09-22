@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
   validates :image, :presence => { :message => ": It is required for this kind of post" }, if: :is_image?
 
   validates :title, presence: true, length: { minimum: 3, maximum: 66 }
-  validates :description, presence: true, length: { minimum: 10 }
+  validates :description, presence: true, length: { minimum: 10, maximum: 10000 }
 
   validates :post_type, presence:true, format: {
     with: %r{\A(standard|image|video|status|quote|link|gallery|crew)\Z},

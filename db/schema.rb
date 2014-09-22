@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20140922090149) do
 
   create_table "comments", force: true do |t|
-    t.string   "title",            limit: 50,         default: ""
-    t.text     "comment",          limit: 4294967295
+    t.string   "title",            limit: 50,    default: ""
+    t.text     "comment",          limit: 10000
     t.integer  "commentable_id"
     t.string   "commentable_type"
     t.integer  "user_id"
-    t.string   "role",                                default: "comments"
+    t.string   "role",                           default: "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20140922090149) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
-    t.text     "description",        limit: 4294967295
+    t.text     "description",        limit: 10000
     t.string   "post_type"
     t.integer  "user_id"
     t.datetime "created_at"

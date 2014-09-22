@@ -1,6 +1,11 @@
 class UpdateLongString < ActiveRecord::Migration
-  def change
-    change_column :posts, :description, :text, :limit => 4294967295
-    change_column :comments, :comment, :text, :limit => 4294967295
+  
+  def self.up
+    change_column :posts, :description, :text, :limit => 10000
+    change_column :comments, :comment, :text, :limit => 10000
+  end
+  def self.down
+    change_column :posts, :description, :text, :limit => 255
+    change_column :comments, :comment, :text, :limit => 255
   end
 end
