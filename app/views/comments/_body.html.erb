@@ -6,7 +6,7 @@
 	<div class="comment-bubble bubble-float-left" >
 		
 		<% if can? :destroy, comment %>
-			<span class="comments-delete" style="position: absolute;">
+			<span class="comments-delete" >
 				<%= link_to "", comment , method: :delete, data: { confirm: 'Are you sure?' } %>
 			</span>
 		<% end %>

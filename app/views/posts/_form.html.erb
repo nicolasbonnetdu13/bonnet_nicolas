@@ -37,7 +37,7 @@
 				<%= f.label :image %>
 				<%= f.file_field :image, :onChange => "displayImageContainer(this)" %>
 			</div>
-			<div class="entry-thumbnail", id="image_container", style="display:none;">
+			<div class="entry-thumbnail", id="image_container">
 				<%= image_tag @post.image.url, :id => "image_display" %>
 			</div>
 			<br>
