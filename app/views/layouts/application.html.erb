@@ -5,6 +5,7 @@
               :description => 'This website has been made with Ruby on Rails to show what I am doing and what I can do!',
               :keywords => 'Nicolas Bonnet, developer, mobile developer, ios developer, web developer, ruby on rails, blog' %>
 		<%= display_meta_tags :separator => "&mdash;".html_safe %>
+		<%= favicon_link_tag '/assets/icon.png', type: 'image/png' %>
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "jquery.cropit" %>
