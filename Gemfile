@@ -73,6 +73,8 @@ gem 'aws-s3'
 gem "socialization"
 gem 'google-analytics-rails'
 
+gem 'static_addthis'
+
 
 # gem 'aws-sdk', '~> 1.11.3'
 # gem 'opsworks', '~> 0.0.16'

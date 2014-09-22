@@ -9,6 +9,7 @@
 		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= javascript_include_tag "jquery.cropit" %>
+		<!-- Google Analytics -->
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -19,6 +20,7 @@
 		  ga('send', 'pageview');
 		
 		</script>
+		<!-- End Google Analytics -->
 		<%= csrf_meta_tags %>
 
 	</head>
@@ -34,6 +36,10 @@
 				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link" %>
 			<% end %>
 		</div>
+		
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-541fedd746f25201"></script>
+
 		
 		<div id="page" class="hfeed site">
 			<% cache do %>
