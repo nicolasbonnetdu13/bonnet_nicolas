@@ -1105,6 +1105,7 @@ a:hover, a:focus, a:active {
 
 .site-info {
   margin: 0 auto;
+  float: left;
 }
 @media screen and (max-width: 65em) {
   .site-info {
