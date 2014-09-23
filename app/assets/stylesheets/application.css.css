@@ -1035,7 +1035,7 @@ a:hover, a:focus, a:active {
 /* =Layout */
 .site {
   margin: 0 auto;
-  max-width: 70%;
+  max-width: 80%;
 }
 @media screen and (max-width: 65em) {
   .site {
@@ -1044,10 +1044,10 @@ a:hover, a:focus, a:active {
 }
 
 .site-content {
-  float: right;
-  width: 66%;
+  float: left;
+  width: 62%;
   max-width: 800px;
-  margin: 72px auto 0;
+  margin: 72px 0 0 4%;
 }
 @media screen and (max-width: 65em) {
   .site-content {
@@ -1117,9 +1117,9 @@ a:hover, a:focus, a:active {
   float: left;
   margin-top: 72px;
   margin-bottom: 0;
-  margin-left:-5%;
+  margin-left: 0%;
   position: relative;
-  width: 35%;
+  width: 30%;
   max-width: 400px;
   z-index: 1;
 }
