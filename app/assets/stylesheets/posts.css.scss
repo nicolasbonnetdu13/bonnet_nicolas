@@ -22,6 +22,42 @@
   vertical-align: middle;
 }
 
+.back-button input{
+  
+  background: url('back_button.png') no-repeat;
+  background-position-y: 9px;
+  background-position-x: 12px;
+  color: #9b8d76;
+  background-color: #efedea;
+  border: 2px solid #9b8d76;
+  padding: 15px 30px 15px 50px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0px;
+  width: 150px;
+}
+
+.back-button input:hover {
+  background: url('back_button_hover.png') no-repeat;
+  background-position-y: 9px;
+  background-position-x: 12px;
+  border-radius: 15px;
+  color: #c2beb7;
+}
+
+.back-button input:active {
+  -webkit-animation-name: push;
+  animation-name: push;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
 .back-button a{
   
   background: url('back_button.png') no-repeat;
