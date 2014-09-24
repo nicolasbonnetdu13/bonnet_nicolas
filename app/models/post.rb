@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   self.paginates_per 10
 
-  belongs_to :user, :dependent => :destroy
+  belongs_to :user
   # ==============x
   # = Attributes =
   # ==============
