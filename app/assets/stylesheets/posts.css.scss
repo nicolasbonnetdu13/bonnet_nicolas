@@ -271,6 +271,9 @@
 .like:hover:before{
   color: #d181bb; // pink
 }
+#no_hover:hover:before{
+  color: #ada393; // normal color
+}
 .unlike:hover:before{
   color: #518dc5;
 }
@@ -284,23 +287,23 @@
 
 .like:before{
   position: relative;
-  top: 10px;
+  top: 7px;
   color: #ada393;
   content : "\f461";
   -webkit-font-smoothing: antialiased;
   font-family: "Genericons";
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: normal;
 }
 .unlike:before{
   position: relative;
-  top: 10px;
+  top: 7px;
   color: #d181bb;
   content : "\f461";
   -webkit-font-smoothing: antialiased;
   font-family: "Genericons";
-  font-size: 30px;
+  font-size: 28px;
   font-style: normal;
   font-weight: normal;
 }

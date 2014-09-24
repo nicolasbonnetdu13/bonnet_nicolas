@@ -1,11 +1,14 @@
 <% if can? :create, Comment %>
-
-		<div class="like_form <%= likeable.class.to_s() %>">
-			<% if current_user.likes?(likeable) %>
-				<%= render 'shared/unlike', likeable: likeable %>
-			<% else %>
-				<%= render 'shared/like', likeable: likeable  %>
-			<% end %>
-		</div>
+	<div class="like_form <%= likeable.class.to_s() %>">
+		<% if current_user.likes?(likeable) %>
+			<%= render 'shared/unlike', likeable: likeable %>
+		<% else %>
+			<%= render 'shared/like', likeable: likeable  %>
+		<% end %>
+	</div>
+<% else %>
+	<div class="like_form <%= likeable.class.to_s() %>">
+		<a class="like" id="no_hover"></a><%= pluralize(likeable.likers(User).count, 'like')%>
+	</div>
 <% end %>
 
