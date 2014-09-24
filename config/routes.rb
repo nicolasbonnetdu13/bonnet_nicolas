@@ -1,8 +1,8 @@
 MyBlog::Application.routes.draw do
   
-  get "static_pages/myProjects"
-  get "static_pages/about"
-  get "static_pages/aboutMe"
+  get "myProjects" => 'static_pages#myProjects'
+  get "about" => 'static_pages#about'
+  get "aboutMe" => 'static_pages#aboutMe'
   resources :gallery_images
 
   root to: "posts#index"

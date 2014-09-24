@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<% set_meta_tags :title => 'Nicolas Bonnet | Mobile developer',
-              :description => 'My name is Nicolas Bonnet and I am a mobile developer. I made this website in Ruby on Rails to show what I am doing and what I can do!',
+              :description => 'My name is Nicolas Bonnet and I am a mobile developer. I made this website using Ruby on Rails to show what I am doing and what I can do!',
               :keywords => 'Nicolas, Bonnet, Nicolas Bonnet, developer, mobile developer, ios developer, web developer, ruby on rails, blog' %>
 		<%= display_meta_tags :separator => "&mdash;".html_safe %>
 		<%= favicon_link_tag '/assets/icon.png', type: 'image/png' %>
@@ -86,13 +86,13 @@
 						<div class="menu-footer-container">
 							<ul id="menu-footer" class="menu">
 								<li class="menu-item">
-									<%= link_to  "My projects", static_pages_myProjects_path %>
+									<%= link_to  "My projects", myProjects_path %>
 								</li>
 								<li class="menu-item">
-									<%= link_to  "About this website", static_pages_about_path %>
+									<%= link_to  "About this website", about_path %>
 								</li>
 								<li class="menu-item">
-									<%= link_to  "About me", static_pages_aboutMe_path %>
+									<%= link_to  "About me", aboutMe_path %>
 								</li>
 							</ul>
 						</div>
@@ -119,7 +119,7 @@
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
 				<div class="site-info">
-					Made by Bonnet Nicolas in ruby on rails.
+					Made by Bonnet Nicolas using ruby on rails.
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 		</div><!-- #page -->
