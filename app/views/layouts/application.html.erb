@@ -28,12 +28,12 @@
 		<div class="account-container">
 			<% if current_user.is? :guest %>
 				<span>Current user : <%= current_user.username %></span>
-				<%= link_to 'Login', new_user_session_path, class: "link", id: "login-link" %>
+				<%= link_to 'Login', new_user_session_path, class: "link", id: "login-link", :rel => 'nofollow' %>
 			<% else %>
 				<%= image_tag current_user.avatar.url(:thumb) %>
 				<span id="span-logged"><%= current_user.username %></span>
-				<%= link_to 'Settings', edit_user_registration_path, class: "link" %>
-				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link" %>
+				<%= link_to 'Settings', edit_user_registration_path, class: "link", :rel => 'nofollow' %>
+				<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link", :rel => 'nofollow' %>
 			<% end %>
 		</div>
 		

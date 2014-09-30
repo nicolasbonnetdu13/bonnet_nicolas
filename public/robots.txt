@@ -4,8 +4,8 @@
 
 Sitemap: http://bonnet-nicolas.com/sitemap.xml
 
-User-agent: *
-Disallow: /
-
-User-agent: Google-Image
-Disallow: /
+# User-agent: *
+# Disallow: /
+# 
+# User-agent: Google-Image
+# Disallow: /
