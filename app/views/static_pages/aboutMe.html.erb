@@ -22,9 +22,10 @@
 		Find below my Curriculum Vitae. 
 	</p>
 	<%= image_tag("CV_low_quality.png", class: "CV_image") %>
-	<%= link_to "Download CV",download_cv_path %>
 	</br>
-	<%= link_to "Download High Quality CV",download_cv_path %>
+	<%= link_to "Download CV", download_cv_path, target: '_blank' %>
+	</br>
+	<%= link_to "Download High Quality CV", download_cv_path, target: '_blank' %>
 </div>
 
 <form class="back-button"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>
