@@ -3,6 +3,7 @@ MyBlog::Application.routes.draw do
   get "myProjects" => 'static_pages#myProjects'
   get "about" => 'static_pages#about'
   get "aboutMe" => 'static_pages#aboutMe'
+  get "download_cv" => 'static_pages#download_cv'
   resources :gallery_images
 
   root to: "posts#index"
