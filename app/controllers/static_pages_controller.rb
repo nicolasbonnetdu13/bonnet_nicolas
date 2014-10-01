@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     redirect_to "https://s3-eu-west-1.amazonaws.com/bonnetnicolas-assets/public/CV_low_quality.pdf"
   end
   
-  def download_high_cv
+  def download_high_quality_cv
     redirect_to "https://s3-eu-west-1.amazonaws.com/bonnetnicolas-assets/public/CV.pdf"
   end
 
