@@ -1,5 +1,10 @@
 MyBlog::Application.routes.draw do
   
+  constraints(:host => /^bonnet-nicolas.com/) do
+    root :to => redirect("http://www.bonnet-nicolas.com")
+    match '/*path', :to => redirect {|params| "http://www.bonnet-nicolas.com/#{params[:path]}"}
+  end
+  
   get "myProjects" => 'static_pages#myProjects'
   get "about" => 'static_pages#about'
   get "aboutMe" => 'static_pages#aboutMe'
