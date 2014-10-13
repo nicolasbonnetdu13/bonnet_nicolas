@@ -35,8 +35,6 @@ class Post < ActiveRecord::Base
   has_many :comments, :as => :commentable, :dependent => :destroy
   has_many :gallery_images, :dependent => :destroy
 
-  validates :gallery_images, :presence => { :message => ": It is required for this kind of post" }, if: :is_gallery?
-
   validates :video_url, :presence => { :message => ": It is required for this kind of post" }, if: :is_video?
   def is_video?
     (self.post_type == 'video')
